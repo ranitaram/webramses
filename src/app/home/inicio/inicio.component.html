@@ -76,6 +76,51 @@
       }
     </style>
 
+    <!-- estilo del form -->
+    <style>
+      .form-container {
+        margin-top: 20px;
+        text-align: center;
+      }
+      
+      form {
+        font-size: 16px;
+        color: #333;
+        background-color: #f2f2f2;
+        padding: 20px;
+        border-radius: 5px;
+      }
+      
+      input[type="text"], input[type="email"], textarea {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+        font-size: 16px;
+        color: #333;
+        border-radius: 5px;
+        border: none;
+      }
+      
+      textarea {
+        height: 150px;
+      }
+      
+      button[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      button[type="submit"]:hover {
+        background-color: #0062cc;
+      }
+      </style>
+
     
     <!-- Custom styles for this template -->
  
@@ -140,32 +185,30 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <img class="bd-placeholder-img" width="100%" height="100%" src="assets/img/banner-angular.png" alt="Descripción de la imagen">
         <div class="container">
           <div class="carousel-caption text-start">
-            <h1>Example headline.</h1>
-            <p>Some representative placeholder content for the first slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+            <h1>Angular es una de las mejores opciones para desarrollar aplicaciones web,</h1>
+            <p>escalables robustas y de alta calidad.</p>
           </div>
         </div>
       </div>
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <img class="bd-placeholder-img" width="100%" height="100%" src="assets/img/banner-node.png" alt="Descripción de la imagen">
         <div class="container">
           <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>Some representative placeholder content for the second slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+            <h1>NodeJS es un entorno de tiempo de ejecución de JavaScript</h1>
+            <p>que ha revolucionado la forma en que se construyen aplicaciones web.</p>           
           </div>
         </div>
       </div>
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <img class="bd-placeholder-img" width="100%" height="100%" src="assets/img/banner-mongo.png" alt="Descripción de la imagen">
         <div class="container">
           <div class="carousel-caption text-end">
-            <h1>One more for good measure.</h1>
-            <p>Some representative placeholder content for the third slide of this carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+            <h1>MongoDB es una base de datos NoSQL</h1>
+            <p>que ofrece una gran cantidad de ventajas en comparación con los sistemas de bases de datos relacionales tradicionales.</p>
+            <!-- <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p> -->
           </div>
         </div>
       </div>
@@ -190,22 +233,22 @@
     <!-- Three columns of text below the carousel -->
     <div class="row">
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="assets/img/1.png" alt="Mi imagen">
         <h2 class="fw-normal">Proyectos</h2>
         <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-        <p><a class="btn btn-secondary" routerLink="/proyectos">View details &raquo;</a></p>
+        <p><a class="btn btn-secondary" routerLink="/proyectos">Ir a proyectos &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="assets/img/2.png" alt="Mi imagen">
         <h2 class="fw-normal">Ejercicios para pruebas técnicas</h2>
         <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-        <p><a class="btn btn-secondary" routerLink="/ejercicios">View details &raquo;</a></p>
+        <p><a class="btn btn-secondary" routerLink="/ejercicios">Ir a ejercicios &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
         <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="assets/img/git.jpg" alt="Mi imagen">
         <h2 class="fw-normal">Repositorios</h2>
         <p>Por el momento tengo poco más de 30 repositorios entre ellos la mayoría hechos con Angular del lado del frontend, con Nodejs (express y nest) del lado del backend y Flutter del lado del móvil.</p>
-        <p><a class="btn btn-secondary" href="https://github.com/ranitaram?tab=repositories">View details &raquo;</a></p>
+        <p><a class="btn btn-secondary" href="https://github.com/ranitaram?tab=repositories">Ir a los repositorios &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
 
@@ -216,11 +259,12 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span class="text-body-secondary">It’ll blow your mind.</span></h2>
-        <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
+        <h2 class="featurette-heading fw-normal lh-1">Entre las principales ventajas de Angular se encuentran su estructura modular,</h2>
+        <p class="lead">que facilita el desarrollo y la reutilización de código, su potente sistema de enlace de datos, que permite crear aplicaciones dinámicas y en tiempo real,</p>
+        <p class="lead">y su capacidad para optimizar el rendimiento y la velocidad de carga de las páginas web. ¡Si buscas una herramienta poderosa y eficiente para tu proyecto, Angular es la respuesta!</p>
       </div>
       <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+        <img src="assets/img/angular-logo.png" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" alt="Descripción de la imagen">
       </div>
     </div>
 
@@ -228,11 +272,14 @@
 
     <div class="row featurette">
       <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span class="text-body-secondary">See for yourself.</span></h2>
-        <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+        <h2 class="featurette-heading fw-normal lh-1">NodeJS es increíblemente eficiente y escalable.</h2>
+        <p class="lead">Con su modelo de programación basado en eventos y su capacidad para manejar múltiples solicitudes de forma simultánea,</p>
+        <p class="lead">Además, su enorme comunidad de desarrolladores y su amplia gama de bibliotecas y paquetes lo hacen una herramienta indispensable para cualquier proyecto de desarrollo web moderno.</p>
+        <p class="lead">NodeJS es especialmente útil para aplicaciones web en tiempo real, como chats y juegos, y es muy popular en la creación de aplicaciones basadas en microservicios.</p>
+        <p class="lead"> En definitiva, NodeJS es una herramienta asombrosa y esencial para cualquier desarrollador web que busque crear aplicaciones escalables y eficientes.</p>
       </div>
       <div class="col-md-5 order-md-1">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+        <img src="assets/img/node-js.png" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" alt="Descripción de la imagen">
       </div>
     </div>
 
@@ -240,11 +287,40 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">And lastly, this one. <span class="text-body-secondary">Checkmate.</span></h2>
-        <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+        <h2 class="featurette-heading fw-normal lh-1">Entre las características más destacadas de MongoDB se encuentran su escalabilidad horizontal,</h2>
+        <p class="lead">su flexibilidad en la estructura de los datos y su capacidad para manejar grandes cantidades de información en tiempo real.</p>
+        <p class="lead"> Además, MongoDB cuenta con una gran comunidad de desarrolladores y una amplia documentación en línea, lo que lo convierte en una opción popular para muchas aplicaciones web modernas.</p>
+        <p class="lead">Si estás buscando una base de datos que te permita escalar tus aplicaciones y manejar grandes volúmenes de datos, MongoDB es una excelente opción.</p>
       </div>
       <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+        <img src="assets/img/mongo-logo.png" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" alt="Descripción de la imagen">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+    
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Contacto</h2>
+        <p class="lead">¡Hola! Me encantaría escuchar tus preguntas o inquietudes. Si deseas contactarme, por favor envíame un mensaje a través de este medio. Normalmente respondo en menos de una hora dentro de un horario razonable de 8 AM a 8 PM.</p>
+        <p class="lead">Si prefieres otro medio de contacto, como correo eléctronico o teléfono, te los proporcionaré después de que me envíes el mensaje.</p>
+        <div class="form-container">
+          <form name="contact-form" netlify>
+            <input type="text" name="name" placeholder="Nombre" required>
+            <input type="email" name="email" placeholder="Correo electrónico" required>
+            <textarea name="message" placeholder="Mensaje" required></textarea>
+            <button type="submit">Enviar mensaje</button>
+          </form>
+        </div>
+        
+        
+      </div>
+      <div class="col-md-5">
+        <img src="assets/img/contacto.png" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" alt="Descripción de la imagen">
+        <a href="https://twitter.com/IndalecioRamses">
+          <img src="assets/img/twitter.png" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" alt="Descripción de la imagen">
+        </a>
+        <!-- <img src="assets/img/face.png" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" alt="Descripción de la imagen"> -->
       </div>
     </div>
 
@@ -258,7 +334,7 @@
   <!-- FOOTER -->
   <footer class="container">
     <p class="float-end"><a href="#">Regresar arriba</a></p>
-    <p>&copy; 2023 Ramses Indalecio. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    <p>&copy; 2023 Ramses Indalecio. &middot; <a routerLink="politicas">Políticas de privacidad</a> &middot; <a routerLink="terminos">Términos y condiciones</a></p>
   </footer>
 </main>
 
