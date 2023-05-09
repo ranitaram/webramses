@@ -7,6 +7,7 @@ import { NopagefoundComponent } from './nopagefound/nopagefound.component';
 import { HomeModule } from './home/home.module';
 import { EjerciciosModule } from './ejercicios/ejercicios.module';
 import { ProyectosModule } from './proyectos/proyectos.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,10 +15,11 @@ import { ProyectosModule } from './proyectos/proyectos.module';
     NopagefoundComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
-    HomeModule,
+    BrowserModule,
     EjerciciosModule,
+    HomeModule,
+    FormsModule,
     ProyectosModule
   ],
   providers: [],
