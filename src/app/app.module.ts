@@ -9,7 +9,7 @@ import { EjerciciosModule } from './ejercicios/ejercicios.module';
 import { ProyectosModule } from './proyectos/proyectos.module';
 import { FormsModule } from '@angular/forms';
 import { ComponentsModule } from './components/components.module';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +21,7 @@ import { ComponentsModule } from './components/components.module';
     ComponentsModule,
     EjerciciosModule,
     HomeModule,
+    HttpClientModule,
     FormsModule,
     ProyectosModule,
   ],
