@@ -7,6 +7,7 @@ import { Prueba1Component } from './prueba1/prueba1.component';
 import { Prueba2Component } from './prueba2/prueba2.component';
 import { FormsModule } from '@angular/forms';
 import { Prueba3Component } from './prueba3/prueba3.component';
+import { ComponentsModule } from '../components/components.module';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { Prueba3Component } from './prueba3/prueba3.component';
     CommonModule,
     EjerciciosRoutingModule,
     FormsModule,
+    ComponentsModule
   ],
   exports: [
     LeyaoutEjerciciosComponent,

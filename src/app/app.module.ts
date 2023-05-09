@@ -8,6 +8,7 @@ import { HomeModule } from './home/home.module';
 import { EjerciciosModule } from './ejercicios/ejercicios.module';
 import { ProyectosModule } from './proyectos/proyectos.module';
 import { FormsModule } from '@angular/forms';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [
@@ -17,10 +18,11 @@ import { FormsModule } from '@angular/forms';
   imports: [
     AppRoutingModule,
     BrowserModule,
+    ComponentsModule,
     EjerciciosModule,
     HomeModule,
     FormsModule,
-    ProyectosModule
+    ProyectosModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
