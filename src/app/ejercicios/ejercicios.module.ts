@@ -8,6 +8,9 @@ import { Prueba2Component } from './prueba2/prueba2.component';
 import { FormsModule } from '@angular/forms';
 import { Prueba3Component } from './prueba3/prueba3.component';
 import { ComponentsModule } from '../components/components.module';
+import { Prueba4Component } from './prueba4/prueba4.component';
+import { Prueba5Component } from './prueba5/prueba5.component';
+import { Prueba6Component } from './prueba6/prueba6.component';
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import { ComponentsModule } from '../components/components.module';
     LeyaoutEjerciciosComponent,
     Prueba1Component,
     Prueba2Component,
-    Prueba3Component
+    Prueba3Component,
+    Prueba4Component,
+    Prueba5Component,
+    Prueba6Component,
   ],
   imports: [
     CommonModule,
@@ -28,6 +34,9 @@ import { ComponentsModule } from '../components/components.module';
     Prueba1Component,
     Prueba2Component,
     Prueba3Component,
+    Prueba4Component,
+    Prueba5Component,
+    Prueba6Component
   ]
 })
 export class EjerciciosModule { }
