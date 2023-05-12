@@ -1,1 +1,166 @@
-<app-modal></app-modal>
+<style>
+    .right-align {
+        text-align: right;
+    }
+    .right-align a {
+        color: white;
+        text-decoration: none;
+    }
+</style>
+
+
+
+<div style="background-color: #9044e7; padding: 20px;">
+    <div style="background-color: #333; color: #7bc4f4; padding: 10px; word-wrap: break-word !important;">
+        <div class="right-align">
+            <a href="javascript:history.back()"> <i class="bi bi-arrow-left-circle-fill"></i> Regresar</a>
+        </div>
+      <pre style="word-wrap: break-word; overflow-x: auto; white-space: pre-wrap; margin-bottom: 0;">
+        Este ejercicio lo realicé utilizando angular y TypeScript, 
+        pero tú lo puedes hacer con tu framework y lenguaje favorito.
+  
+        La parte del HTML la puedes hacer a tu gusto o lo puedes 
+        mandar a imprimir en consola, terminal etc. 
+        Si asi se te hace más fácil y rápido.
+
+        Este ejercicio fue elaborado por Victor Robles.
+      </pre>
+    </div>
+  </div>
+  
+  <div style="background-color: #9044e7; padding: 20px;">
+    <div style="background-color: #333; color: #e3eb0c; padding: 10px;">
+      <pre  style="word-wrap: break-word; overflow-x: auto; white-space: pre-wrap; margin-bottom: 0;">
+        Enunciado Ejercicio 2:
+        Dada una ruta absoluta de un archivo (de un sistema linux o basado en unix)
+        crear una función que la simplifique
+
+        Ejemplo:
+        simplificarRuta("/home/");             // Salida: /home
+        simplificarRuta("/x/./y/../../z/");    // Salida: /z
+        simplificarRuta("/../");               // Salida: /
+        simplificarRuta("/home//pruebas/");    // Salida: /home/pruebas
+      </pre>
+    </div>
+  </div>
+
+  <div>
+    <h1>Simplificar ruta</h1>
+    <p>ejemplo: /x/./y/../../z/</p>
+    <form>
+      <label for="ruta">Ruta:</label>
+      <input type="text" id="ruta" name="ruta" [(ngModel)]="ruta" [ngModelOptions]="{standalone: true}">
+      <button type="button" (click)="simplificar()">Simplificar</button>
+    </form>
+    <p>Ruta simplificada: {{ rutaSimplificada }}</p>
+  </div>
+  
+  
+  
+  <!-- <div class="container my-4">
+      <h2 class="text-center">Mostrar información de un superhéroe</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 col-sm-8">
+          <form>
+            <div class="mb-3">
+              <label for="alias" class="form-label">Alias del superhéroe:</label>
+              <ul class="superheroes-list">
+                <li>Iron Man</li>
+                <li>Capitán América</li>
+                <li>Thor</li>
+                <li>Spider-Man</li>
+                <li>Hulk</li>
+              </ul>
+              
+              <input type="text" name="alias" class="form-control" id="alias" [(ngModel)]="alias">
+            </div>
+            <button class="btn btn-primary" (click)="mostrarInfoSuperHeroe()">Mostrar información</button>
+          </form>
+        </div>
+      </div>
+      <div class="row justify-content-center mt-4">
+        <div class="col-lg-4 col-md-6 col-sm-8">
+          <div class="card" *ngIf="info">
+            <div class="card-body">
+              <h3 class="card-title">{{alias}}</h3>
+              <p class="card-text"><strong>Nombre real:</strong> {{info.nombreReal}}</p>
+              <p class="card-text"><strong>Poderes:</strong> {{info.poderes.join(', ')}}</p>
+              <p class="card-text"><strong>Equipo:</strong> {{info.equipo}}</p>
+            </div>
+          </div>
+          <div class="alert alert-danger mt-4" role="alert" *ngIf="!info">
+            <h4 class="alert-heading">No hay héroe</h4>
+          </div>
+        </div>
+  
+       
+  
+      </div>
+    </div> -->
+    
+    <div style="background-color: #9044e7; padding: 20px;">
+      <div style="background-color: #333; color: #7bc4f4; padding: 10px;">
+        <pre  style="word-wrap: break-word; overflow-x: auto; white-space: pre-wrap; margin-bottom: 0;">
+          A Continuación la solución explicada 
+          "La puedes usar como pista, antes de ver el código" 
+          y posteriormente el código.
+        </pre>
+      </div>
+    </div>
+    <div style="background-color: #9044e7; padding: 20px;">
+      <div style="background-color: #333; color: #57f596; padding: 10px;">
+        <pre  style="word-wrap: break-word; overflow-x: auto; white-space: pre-wrap; margin-bottom: 0;">
+            Para resolver este ejercicio en Angular y TypeScript, podríamos seguir los siguientes pasos:
+
+            Crear una función en un componente o servicio de Angular que tome una ruta absoluta de un archivo como entrada.
+
+            Dividir la ruta en sus componentes usando el carácter '/' como separador.
+
+            Iterar sobre cada uno de los componentes de la ruta y manejar los siguientes casos:
+            Si el componente actual es un directorio vacío ("") o un punto (".") entonces no hacemos nada y pasamos al siguiente componente.
+
+            Si el componente actual es un doble punto (".."), eliminamos el componente anterior de nuestra pila de componentes.
+
+            En cualquier otro caso, agregamos el componente actual a nuestra pila de componentes.
+            Unimos los componentes de la pila de componentes para construir la ruta simplificada.
+        </pre>
+      </div>
+    </div>
+  
+    <div class="image-container">
+      <div>
+        <img src="./assets/ejercicios/prueba2/prueba2.png" alt="Imagen 1">
+      </div>
+    
+    </div>
+    
+    <div style="background-color: #9044e7; padding: 20px;">
+        <div style="background-color: #333; color: #57f596; padding: 10px;">
+          <pre  style="word-wrap: break-word; overflow-x: auto; white-space: pre-wrap; margin-bottom: 0;">
+            tiene dos propiedades: ruta y rutaSimplificada. 
+            ruta es una cadena de texto que representa la ruta que ingresará el usuario
+            y rutaSimplificada es la cadena de texto resultante de simplificar la ruta ingresada.
+
+            Después esta una función que se ejecutará cuando el usuario haga clic en el botón "Simplificar". 
+            Lo que hace esta función es llamar a la función simplificarRuta pasando la ruta ingresada por el usuario como argumento 
+            y asignar el resultado a la propiedad rutaSimplificada.
+
+            Desues esta la función que realiza la simplificación de la ruta ingresada por el usuario. 
+            Lo que hace es dividir la ruta en componentes utilizando el separador de directorios ("/") 
+            y luego recorre cada componente de la ruta.
+
+            Si el componente es una cadena vacía o un punto (".") no hace nada. 
+            Si el componente es dos puntos (".."), se elimina el último componente de la pila. 
+            Si el componente es cualquier otra cosa, se agrega a la pila.
+
+            Finalmente, se crea una nueva cadena de texto que representa la ruta simplificada 
+            a partir de los componentes que quedan en la pila y se retorna esta cadena.
+          </pre>
+          <div class="right-align">
+            <a href="javascript:history.back()"> <i class="bi bi-arrow-left-circle-fill"></i> Regresar</a>
+        </div>
+        </div>
+        
+      </div>
+    
+
