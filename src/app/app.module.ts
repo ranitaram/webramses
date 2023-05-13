@@ -10,6 +10,7 @@ import { ProyectosModule } from './proyectos/proyectos.module';
 import { FormsModule } from '@angular/forms';
 import { ComponentsModule } from './components/components.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AsistenteModule } from './asistente/asistente.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     AppRoutingModule,
+    AsistenteModule,
     BrowserModule,
     ComponentsModule,
     EjerciciosModule,

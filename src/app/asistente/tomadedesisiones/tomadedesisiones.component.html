@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Asistente de decisiones</title>
+	<style>
+		body {
+			background-color: #f8f8f8;
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			margin: 0;
+			padding: 0;
+		}
+
+		.container {
+			margin: 50px auto;
+			max-width: 800px;
+			padding: 20px;
+			background-color: #fff;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+		}
+
+		h1 {
+			font-size: 32px;
+			margin: 0 0 20px;
+			text-align: center;
+		}
+
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		input[type="text"] {
+			font-size: 16px;
+			padding: 10px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			margin-bottom: 20px;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		button[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			padding: 10px 20px;
+			font-size: 16px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		button[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+
+		p {
+			font-size: 20px;
+			margin: 20px 0;
+			text-align: center;
+		}
+
+		.recommendation {
+			background-color: #f2f2f2;
+			padding: 20px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			margin: 20px 0;
+			display: none;
+		}
+
+		.recommendation h2 {
+			font-size: 24px;
+			margin: 0 0 20px;
+			text-align: center;
+		}
+
+		.recommendation p {
+			font-size: 18px;
+			margin: 20px 0;
+			text-align: justify;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Asistente de decisiones</h1>
+		<form>
+			<label for="question">Ingresa tu pregunta o problema:</label>
+			<input type="text" id="question" name="question" placeholder="Escribe aquí tu pregunta o problema...">
+			<button type="submit">Obtener recomendación</button>
+		</form>
+		<div class="recommendation">
+			<h2>Recomendación:</h2>
+			<p>La recomendación se mostrará aquí.</p>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

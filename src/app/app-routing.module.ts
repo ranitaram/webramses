@@ -5,6 +5,7 @@ import { InicioComponent } from './home/inicio/inicio.component';
 import { HomeRoutingModule } from './home/home-routing.module';
 import { ProyectosRoutingModule } from './proyectos/proyectos-routing.module';
 import { EjerciciosRoutingModule } from './ejercicios/ejercicios-routing.module';
+import { AsistenteRoutingModule } from './asistente/asistente-routing.module';
 
 const routes: Routes = [
 //  {
@@ -22,6 +23,10 @@ const routes: Routes = [
  {
   path: 'proyectos',
   loadChildren: ()=> import('./proyectos/proyectos.module').then(m => m.ProyectosModule)
+ },
+ {
+  path: 'asistente',
+  loadChildren: ()=> import('./asistente/asistente.module').then(m => m.AsistenteModule)
  },
  {
   path: '404',
@@ -43,7 +48,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HomeRoutingModule,
     ProyectosRoutingModule,
-    EjerciciosRoutingModule
+    EjerciciosRoutingModule,
+    AsistenteRoutingModule,
   ],
   exports: [RouterModule]
 })
