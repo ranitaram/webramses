@@ -1,6 +1,125 @@
 
 
-<app-modal></app-modal>
+<style>
+    .right-align {
+        text-align: right;
+    }
+    .right-align a {
+        color: white;
+        text-decoration: none;
+    }
+</style>
+
+
+
+<div style="background-color: #9044e7; padding: 20px;">
+    <div style="background-color: #333; color: #7bc4f4; padding: 10px; word-wrap: break-word !important;">
+        <div class="right-align">
+            <a href="javascript:history.back()"> <i class="bi bi-arrow-left-circle-fill"></i> Regresar</a>
+        </div>
+      <pre style="word-wrap: break-word; overflow-x: auto; white-space: pre-wrap; margin-bottom: 0;">
+        Este ejercicio lo realicé utilizando angular y TypeScript, 
+        pero tú lo puedes hacer con tu framework y lenguaje favorito.
+  
+        La parte del HTML la puedes hacer a tu gusto o lo puedes 
+        mandar a imprimir en consola, terminal etc. 
+        Si asi se te hace más fácil y rápido.
+
+        Este ejercicio fue elaborado por Victor Robles.
+      </pre>
+    </div>
+  </div>
+  
+  <div style="background-color: #9044e7; padding: 20px;">
+    <div style="background-color: #333; color: #e3eb0c; padding: 10px;">
+      <pre  style="word-wrap: break-word; overflow-x: auto; white-space: pre-wrap; margin-bottom: 0;">
+        Ejercicio 3:
+        Dadas dos fechas, crea un programa que proporcione la diferencia de dias
+        entre ellas
+ 
+        Ejemplo:
+        diferenciaDeDias('Dec 1, 2023', 'Dec 24, 2023');  // Salida: 23
+      </pre>
+    </div>
+  </div>
+
+    <!-- aqui va el programa -->
+    <div class="date-difference-container">
+        <div class="form-group">
+          <label for="fecha1">Fecha 1:</label>
+          <input type="date" id="fecha1" [(ngModel)]="fecha1">
+        </div>
+        <div class="form-group">
+          <label for="fecha2">Fecha 2:</label>
+          <input type="date" id="fecha2" [(ngModel)]="fecha2">
+        </div>
+        <button (click)="calcularDiferencia()">Calcular diferencia</button>
+        <div *ngIf="diferencia > 0" class="result-container">
+          <p>La diferencia de días es: {{ diferencia }}</p>
+        </div>
+      </div>
+      
+      
+  
+    
+    <div style="background-color: #9044e7; padding: 20px;">
+      <div style="background-color: #333; color: #7bc4f4; padding: 10px;">
+        <pre  style="word-wrap: break-word; overflow-x: auto; white-space: pre-wrap; margin-bottom: 0;">
+          A Continuación la solución explicada 
+          "La puedes usar como pista, antes de ver el código" 
+          y posteriormente el código.
+        </pre>
+      </div>
+    </div>
+    <div style="background-color: #9044e7; padding: 20px;">
+      <div style="background-color: #333; color: #57f596; padding: 10px;">
+        <pre  style="word-wrap: break-word; overflow-x: auto; white-space: pre-wrap; margin-bottom: 0;">
+            fecha1: string = '';: Declaración de la variable fecha1 con tipo de dato string e inicialización con un valor vacío.
+            fecha2: string = '';: Declaración de la variable fecha2 con tipo de dato string e inicialización con un valor vacío.
+            diferencia: number = 0;: Declaración de la variable diferencia con tipo de dato number e inicialización con un valor de 0.
+
+            calcularDiferencia(): Declaración de la función calcularDiferencia que se ejecutará cuando el usuario haga clic en el botón.
+            const date1 = new Date(this.fecha1);: Crea un objeto de fecha (Date) a partir del valor de fecha1, 
+            que es una cadena de caracteres que representa una fecha.
+            
+            const date2 = new Date(this.fecha2);: Crea un objeto de fecha (Date) a partir del valor de fecha2, 
+            que es una cadena de caracteres que representa una fecha.
+            
+            const diffTime = Math.abs(date2.getTime() - date1.getTime());: Obtiene la diferencia de tiempo (en milisegundos) 
+            entre date1 y date2, utilizando el método getTime() 
+            
+            para obtener el valor en milisegundos de cada objeto de fecha. La función Math.abs() 
+            se utiliza para asegurarse de que el resultado 
+            sea siempre un número positivo.
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));: Convierte la diferencia de tiempo en días, dividiendo el resultado 
+            por el número de milisegundos en un día (1000 * 60 * 60 * 24) y redondeando hacia abajo utilizando la función Math.floor().
+            this.diferencia = diffDays;: Asigna el valor de diffDays a la variable diferencia, para mostrar el resultado al usuario.
+        </pre>
+      </div>
+    </div>
+  
+    <div class="image-container">
+      <div>
+        <img src="./assets/ejercicios/prueba3/ejercicio3.png" alt="Imagen 1">
+      </div>
+    
+    </div>
+    
+    <div style="background-color: #9044e7; padding: 20px;">
+        <div style="background-color: #333; color: #57f596; padding: 10px;">
+          <pre  style="word-wrap: break-word; overflow-x: auto; white-space: pre-wrap; margin-bottom: 0;">
+            En resumen, la función calcularDiferencia() toma los valores de fecha1 y fecha2, los convierte en objetos de fecha, 
+            calcula la diferencia de tiempo en días y asigna el resultado a la variable diferencia, que se muestra al usuario.
+          </pre>
+          <div class="right-align">
+            <a href="javascript:history.back()"> <i class="bi bi-arrow-left-circle-fill"></i> Regresar</a>
+        </div>
+        </div>
+        
+      </div>
+    
+
+
 
 	
                     

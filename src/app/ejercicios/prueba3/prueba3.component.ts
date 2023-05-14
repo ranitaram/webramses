@@ -18,5 +18,16 @@ diferenciaDeDias('Dec 1, 2023', 'Dec 24, 2023');  // Salida: 23
  
 */
 export class Prueba3Component {
+  fecha1: string = '';
+  fecha2: string = '';
+  diferencia: number = 0;
+
+  calcularDiferencia(){
+    const date1 = new Date(this.fecha1);
+    const date2 = new Date(this.fecha2);
+    const diffTime = Math.abs(date2.getTime() - date1.getTime());
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    this.diferencia = diffDays;
+  }
   
 }
