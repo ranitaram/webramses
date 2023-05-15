@@ -44,6 +44,39 @@
   margin: 20px 0 !important;
 }
 
+.card-body {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.card-text {
+  margin-bottom: 10px;
+}
+
+.image-container {
+  background-color: #9044e7;
+  padding: 20px;
+}
+
+.image-container > div {
+  background-color: #333;
+  color: #7bc4f4;
+  padding: 10px;
+}
+
+.image-container img {
+  max-width: 100%;
+  width: 100%;
+}
+
 button {
   margin: 0.5rem;
   padding: 0.5rem 1rem;

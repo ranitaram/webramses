@@ -1,36 +1,239 @@
-<div class="container">
-    <h1>Juego del ahorcado</h1>
-    <h3>Super héroes</h3>
-  
-    <!-- Mostrar la palabra oculta con guiones bajos -->
-    <div class="word-container">
-      <p>{{ palabraOculta }}</p>
-    </div>
-  
-    <!-- Mostrar un mensaje de victoria o derrota al usuario -->
-    <div class="result-container">
-      <div *ngIf="verificarGanada()">
-        ¡Has ganado!
-      </div>
-      <div *ngIf="verificarPerdida()">
-        ¡Has perdido! La palabra secreta era {{ palabraActual }}.
-      </div>
-    </div>
-  
-    <!-- Mostrar los botones de las letras disponibles para que el usuario las seleccione -->
-    <div class="letters-container">
-      <button *ngFor="let letra of letrasDisponibles" (click)="seleccionarLetra(letra)" [disabled]="letrasUsadas.includes(letra) || verificarGanada() || verificarPerdida()">
-        {{ letra }}
-      </button>
-    </div>
-  
-    <!-- Mostrar el número de intentos restantes al usuario -->
-    <div class="attempts-container">
-      <p>Intentos restantes: {{ intentos }}</p>
-    </div>
 
-    <button (click)="reiniciarJuego()">Reiniciar Juego</button>
 
-    
+<style>
+  .right-align {
+      text-align: right;
+  }
+  .right-align a {
+      color: white;
+      text-decoration: none;
+  }
+</style>
+
+
+
+<div style="background-color: #9044e7; padding: 20px;">
+  <div style="background-color: #333; color: #7bc4f4; padding: 10px; word-wrap: break-word !important;">
+      <div class="right-align">
+          <a href="javascript:history.back()"> <i class="bi bi-arrow-left-circle-fill"></i> Regresar</a>
+      </div>
+      <hr>
+      <div class="right-align">
+          <a routerLink="/inicio"> <i class="bi bi-house-door"></i> Ir a inicio</a>
+      </div>
+    <pre style="word-wrap: break-word; overflow-x: auto; white-space: pre-wrap; margin-bottom: 0;">
+      Este ejercicio lo realicé utilizando angular y TypeScript, 
+      pero tú lo puedes hacer con tu framework y lenguaje favorito.
+
+      La parte del HTML la puedes hacer a tu gusto o lo puedes 
+      mandar a imprimir en consola, terminal etc. 
+      Si asi se te hace más fácil y rápido.
+
+      Este ejercicio fue elaborado por Victor Robles.
+    </pre>
   </div>
+</div>
+
+<div style="background-color: #9044e7; padding: 20px;">
+  <div style="background-color: #333; color: #e3eb0c; padding: 10px;">
+    <pre  style="word-wrap: break-word; overflow-x: auto; white-space: pre-wrap; margin-bottom: 0;">
+      Ejercicio 4: Crea el juego del ahorcado.
+      El usuario tendrá que ir adivinando y descubriendo las letras de una palabra 
+      secreta, y tendrá 5 intentos (un intento por extremidad del cuerpo humano).
+       
+      Utiliza el método de entrada de datos habitual de tu lenguaje,
+      en el caso de JS, usaremos la función prompt.
+       
+      Ejemplo:
+      juegoDelAhorcado('victor');  
+       
+      Salida:
+      Adivina la letra: i
+      La palabra es: _i___
+      Te quedan 6 intentos
+    </pre>
+  </div>
+</div>
+
+  <!-- aqui va el programa -->
+ 
+<div class="container">
+  <h1>Juego del ahorcado</h1>
+  <h3>Super héroes</h3>
+
+  <!-- Mostrar la palabra oculta con guiones bajos -->
+  <div class="word-container">
+    <p>{{ palabraOculta }}</p>
+  </div>
+
+  <!-- Mostrar un mensaje de victoria o derrota al usuario -->
+  <div class="result-container">
+    <div *ngIf="verificarGanada()">
+      ¡Has ganado!
+    </div>
+    <div *ngIf="verificarPerdida()">
+      ¡Has perdido! La palabra secreta era {{ palabraActual }}.
+    </div>
+  </div>
+
+  <!-- Mostrar los botones de las letras disponibles para que el usuario las seleccione -->
+  <div class="letters-container">
+    <button *ngFor="let letra of letrasDisponibles" (click)="seleccionarLetra(letra)" [disabled]="letrasUsadas.includes(letra) || verificarGanada() || verificarPerdida()">
+      {{ letra }}
+    </button>
+  </div>
+
+  <!-- Mostrar el número de intentos restantes al usuario -->
+  <div class="attempts-container">
+    <p>Intentos restantes: {{ intentos }}</p>
+  </div>
+
+  <button (click)="reiniciarJuego()">Reiniciar Juego</button>
+
+  
+</div>
+    
+    <!-- aqui termina el programa -->
+
+  
+  <div style="background-color: #9044e7; padding: 20px;">
+    <div style="background-color: #333; color: #7bc4f4; padding: 10px;">
+      <pre  style="word-wrap: break-word; overflow-x: auto; white-space: pre-wrap; margin-bottom: 0;">
+        A Continuación la solución explicada 
+        "La puedes usar como pista, antes de ver el código" 
+        y posteriormente el código.
+      </pre>
+    </div>
+  </div>
+  <div style="background-color: #9044e7; padding: 20px;">
+    <div style="background-color: #333; color: #57f596; padding: 10px;">
+      <pre  style="word-wrap: break-word; overflow-x: auto; white-space: pre-wrap; margin-bottom: 0;">
+        PASO 1: Importaciones:
+        import: Component  from '@angular/core';
+        import: HttpClient from '@angular/common/http';
+        Se importan los módulos necesarios para utilizar el decorador @Component de Angular y para hacer peticiones HTTP.
+       
+        PASO 2: Se define la interfaz PalabrasJson que describe la estructura de un objeto JSON que contiene un arreglo de palabras.
+       
+        PASO 3: se definen las variables necesarias para el juego del ahorcado. 
+        palabras es un arreglo donde se almacenarán las palabras del archivo JSON, 
+        letrasDisponibles es un arreglo con todas las letras del alfabeto, 
+        letrasUsadas es un arreglo que almacenará las letras adivinadas por el usuario, 
+        intentos es el número de intentos restantes y palabraActual es la palabra que el usuario tiene que adivinar.
+
+        PASO 4: En el constructor del componente, se inyecta el servicio HttpClient y 
+        se realiza una solicitud GET al archivo JSON palabras.json. El resultado se suscribe 
+        y cuando se obtienen los datos, se asignan al arreglo palabras y se llama a la función 
+        iniciarJuego() para comenzar el juego. 
+
+        PASO 5: Método palabraOculta (Getter):
+        Este método es un getter que devuelve la palabra actual oculta, 
+        reemplazando las letras no adivinadas por guiones bajos. 
+        Utiliza el método split para convertir la palabra en un arreglo de letras, 
+        luego usa map para verificar si cada letra está en letrasUsadas y devuelve la letra si es así, 
+        o un guión bajo si no lo está. Finalmente, 
+        utiliza join para unir las letras en una cadena separada por espacios.
+
+        PASO 6: Método seleccionarLetra:
+        Este método se llama cuando el usuario selecciona una letra. Agrega la letra seleccionada al arreglo letrasUsadas 
+        y verifica si la letra no está presente en la palabra actual. Si no está presente, se reduce el número de intentos.
+
+        PASO 7: Método verificarPerdida:
+        Este método verifica si el jugador ha perdido el juego. 
+        Devuelve true si el número de intentos restantes es igual a cero, 
+        lo que indica que el jugador ha agotado todos los intentos y ha perdido.
+
+        PASO 8: Método verificarGanada:
+        Este método verifica si el jugador ha ganado el juego. 
+        Devuelve true si la palabra oculta ya no contiene guiones bajos (_), 
+        lo que significa que todas las letras han sido adivinadas y el jugador ha ganado.
+
+        PASO 9: Método iniciarJuego:
+        Este método se llama al comienzo del juego y cuando el jugador decide reiniciar. 
+        Genera un número aleatorio entre 0 y la longitud del arreglo palabras y utiliza ese índice para 
+        seleccionar una palabra aleatoria de palabras y asignarla a palabraActual. 
+        Luego, reinicia el arreglo letrasUsadas y restablece el número de intentos.
+
+        PASO 10: Reinicia el juego:
+        restablece las variables:
+        palabraActual = '';
+        letrasUsadas = [];
+        intentos = 6;
+        iniciarJuego();
+      </pre>
+    </div>
+  </div>
+
+  <div class="image-container">
+    <div>
+      <img src="./assets/ejercicios/prueba4/ejercicio4-1.png" alt="Imagen 1">
+    </div>
+  
+  </div>
+  <div class="image-container">
+    <div>
+      <img src="./assets/ejercicios/prueba4/ejercicio4-2.png" alt="Imagen 2">
+    </div>
+  
+  </div>
+  <div class="image-container">
+    <div>
+      <img src="./assets/ejercicios/prueba4/ejercicio4-3.png" alt="Imagen 3">
+    </div>
+  
+  </div>
+  <div class="image-container">
+    <div>
+      <img src="./assets/ejercicios/prueba4/ejercicio4-4.png" alt="Imagen 4">
+    </div>
+  
+  </div>
+  
+  <div style="background-color: #9044e7; padding: 20px;">
+      <div style="background-color: #333; color: #57f596; padding: 10px;">
+        <pre  style="word-wrap: break-word; overflow-x: auto; white-space: pre-wrap; margin-bottom: 0;">
+          El juego consiste en adivinar una palabra oculta seleccionada al azar de un conjunto de 
+          palabras cargadas desde un archivo JSON.
+
+          El componente Prueba4Component contiene variables que representan el estado del juego, 
+          como la lista de palabras disponibles, las letras disponibles para adivinar, 
+          las letras utilizadas por el jugador y el número de intentos restantes.
+
+          El juego comienza cargando las palabras desde el archivo JSON mediante una solicitud HTTP.
+          Luego, el jugador puede seleccionar letras para adivinar la palabra oculta. 
+          Las letras seleccionadas se agregan a letrasUsadas, y si una letra no está presente en la palabra oculta, 
+          se reduce el número de intentos restantes.
+
+          Hay métodos para verificar si el jugador ha perdido o ganado el juego.
+          Si el jugador ha agotado los intentos (intentos === 0), se considera una derrota. 
+          Si todas las letras de la palabra oculta han sido adivinadas y no quedan guiones bajos (_), 
+          se considera una victoria.
+
+          También hay métodos para iniciar el juego, seleccionar una nueva palabra aleatoria, 
+          reiniciar el juego y obtener la palabra oculta con las letras adivinadas mostradas y 
+          los espacios en blanco.
+
+          En general, el código implementa la lógica del juego del ahorcado y proporciona funciones
+          y variables necesarias para interactuar con el juego desde la interfaz de usuario.
+        </pre>
+        <div class="right-align">
+          <a href="javascript:history.back()"> <i class="bi bi-arrow-left-circle-fill"></i> Regresar</a>
+      </div>
+      <hr>
+      <div class="right-align">
+          <a routerLink="/inicio"> <i class="bi bi-house-door"></i> Ir a inicio</a>
+      </div>
+      </div>
+      
+    </div>
+  
+
+
+
+
+                  
+             
+
+              
+
   

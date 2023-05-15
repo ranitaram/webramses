@@ -1,5 +1,5 @@
 {
-  "heroes": [
+  "palabras": [
     "batman",
     "superman",
     "hulk",
@@ -15,21 +15,15 @@
     "deadpool",
     "hellboy",
     "hawkman",
-    "greenarrow",
     "doctorstrange",
     "blackpanther",
     "antman",
-    "nightcrawler",
     "catwoman",
     "wonderwoman",
-    "zatanna",
-    "ghostwriter",
     "gambit",
     "namor",
     "vision",
-    "daredevil",
-    "zatara",
-    "beast"
+    "daredevil"
   ]
 }
 
