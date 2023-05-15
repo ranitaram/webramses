@@ -1,1 +1,26 @@
-<app-modal></app-modal>
+<div class="container">
+    <h1>Juego del ahorcado</h1>
+    
+    <!-- Mostrar la palabra oculta con guiones bajos -->
+    <div class="word-container">
+      <p>{{ palabraOculta }}</p>
+    </div>
+  
+    <!-- Mostrar un mensaje de victoria o derrota al usuario -->
+    <div class="result-container">
+      <div *ngIf="verificarGanada()">
+        ¡Has ganado!
+      </div>
+      <div *ngIf="verificarPerdida()">
+        ¡Has perdido! La palabra secreta era {{ palabraSecreta }}.
+      </div>
+    </div>
+  
+    <!-- Mostrar los botones de las letras disponibles para que el usuario las seleccione -->
+    <div class="letters-container">
+      <button *ngFor="let letra of letrasDisponibles" (click)="seleccionarLetra(letra)" [disabled]="letrasUsadas.includes(letra) || verificarGanada() || verificarPerdida()">
+        {{ letra }}
+      </button>
+    </div>
+  </div>
+  
