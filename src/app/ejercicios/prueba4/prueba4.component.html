@@ -1,6 +1,7 @@
 <div class="container">
     <h1>Juego del ahorcado</h1>
-    
+    <h3>Super héroes</h3>
+  
     <!-- Mostrar la palabra oculta con guiones bajos -->
     <div class="word-container">
       <p>{{ palabraOculta }}</p>
@@ -12,7 +13,7 @@
         ¡Has ganado!
       </div>
       <div *ngIf="verificarPerdida()">
-        ¡Has perdido! La palabra secreta era {{ palabraSecreta }}.
+        ¡Has perdido! La palabra secreta era {{ palabraActual }}.
       </div>
     </div>
   
@@ -22,5 +23,14 @@
         {{ letra }}
       </button>
     </div>
+  
+    <!-- Mostrar el número de intentos restantes al usuario -->
+    <div class="attempts-container">
+      <p>Intentos restantes: {{ intentos }}</p>
+    </div>
+
+    <button (click)="reiniciarJuego()">Reiniciar Juego</button>
+
+    
   </div>
   

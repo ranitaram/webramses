@@ -1,1 +1,36 @@
-[  "angular",  "javascript",  "typescript",  "html",  "css",  "react",  "vue",  "node",  "express",  "mongodb"]
+{
+  "heroes": [
+    "batman",
+    "superman",
+    "hulk",
+    "ironman",
+    "spiderman",
+    "wolverine",
+    "flash",
+    "thor",
+    "aquaman",
+    "cyborg",
+    "blackwidow",
+    "storm",
+    "deadpool",
+    "hellboy",
+    "hawkman",
+    "greenarrow",
+    "doctorstrange",
+    "blackpanther",
+    "antman",
+    "nightcrawler",
+    "catwoman",
+    "wonderwoman",
+    "zatanna",
+    "ghostwriter",
+    "gambit",
+    "namor",
+    "vision",
+    "daredevil",
+    "zatara",
+    "beast"
+  ]
+}
+
+  

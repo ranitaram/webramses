@@ -37,6 +37,13 @@
   margin: 2rem 0;
 }
 
+.attempts-container p {
+  color: navy !important;
+  font-size: 20px !important;
+  font-weight: bold !important;
+  margin: 20px 0 !important;
+}
+
 button {
   margin: 0.5rem;
   padding: 0.5rem 1rem;
@@ -67,4 +74,9 @@ button:disabled {
   button {
     font-size: 1.2rem;
   }
+
+ 
+  
+  
+  
 }

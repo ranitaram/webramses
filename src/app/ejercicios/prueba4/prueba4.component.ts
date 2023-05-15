@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+interface PalabrasJson {
+  palabras: string[];
+}
 
 @Component({
   selector: 'app-prueba4',
@@ -7,13 +12,22 @@ import { Component } from '@angular/core';
 })
 export class Prueba4Component {
   //VARIABLES
-  palabraSecreta: string = "angular";
+  palabras: string[] = [];
+  // palabraSecreta: string = "angular";
   letrasDisponibles: string[] = "abcdefghijklmnopqrstuvwxyz".split("");
   letrasUsadas: string[] = [];
   intentos: number = 6;
+  palabraActual: string = '';
+
+  constructor(private http: HttpClient) {
+    this.http.get<PalabrasJson>('assets/palabras.json').subscribe(data => {
+      this.palabras = data.palabras;
+      this.iniciarJuego();
+    });
+  }
 
   get palabraOculta(): string {
-    return this.palabraSecreta
+    return this.palabraActual
       .split("")
       .map(letra => (this.letrasUsadas.includes(letra) ? letra : "_"))
       .join(" ");
@@ -21,7 +35,7 @@ export class Prueba4Component {
 
   seleccionarLetra(letra: string) {
     this.letrasUsadas.push(letra);
-    if (!this.palabraSecreta.includes(letra)) {
+    if (!this.palabraActual.includes(letra)) {
       this.intentos--;
     }
   }
@@ -35,9 +49,17 @@ export class Prueba4Component {
   }
 
   iniciarJuego() {
-    this.palabraSecreta = "angular";
+    const indice = Math.floor(Math.random() * this.palabras.length);
+    this.palabraActual = this.palabras[indice];
     this.letrasUsadas = [];
     this.intentos = 6;
+  }
+
+  reiniciarJuego() {
+    this.palabraActual = '';
+    this.letrasUsadas = [];
+    this.intentos = 6;
+    this.iniciarJuego();
   }
     
 
