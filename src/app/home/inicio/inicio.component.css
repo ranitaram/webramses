@@ -58,6 +58,10 @@ body {
   }
   
   /* rtl:end:remove */
+
+  .active {
+    font-weight: bold; /* Por ejemplo, puedes cambiar el estilo para resaltar la sección activa */
+  }
   
   /* RESPONSIVE CSS
   -------------------------------------------------- */

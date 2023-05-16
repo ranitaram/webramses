@@ -15,3 +15,6 @@
     color: blue;
   }
   
+  .active {
+    font-weight: bold; /* Por ejemplo, puedes cambiar el estilo para resaltar la sección activa */
+  }
