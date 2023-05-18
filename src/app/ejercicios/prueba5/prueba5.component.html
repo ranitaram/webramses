@@ -1,1 +1,158 @@
-<app-modal></app-modal>
+<style>
+    .right-align {
+        text-align: right;
+    }
+    .right-align a {
+        color: white;
+        text-decoration: none;
+    }
+</style>
+
+<style>
+    .container {
+      width: 300px;
+      margin: 0 auto;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+  
+    h2 {
+        margin-top: 20px;
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #3366cc;
+      text-transform: uppercase;
+    }
+  
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+  
+    li {
+      margin-bottom: 10px;
+      color: #555555;
+      background-color: #f2f2f2;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+  </style>
+  
+
+
+
+<div style="background-color: #9044e7; padding: 20px;">
+    <div style="background-color: #333; color: #7bc4f4; padding: 10px; word-wrap: break-word !important;">
+        <div class="right-align">
+            <a href="javascript:history.back()"> <i class="bi bi-arrow-left-circle-fill"></i> Regresar</a>
+        </div>
+        <hr>
+        <div class="right-align">
+            <a routerLink="/inicio"> <i class="bi bi-house-door"></i> Ir a inicio</a>
+        </div>
+      <pre style="word-wrap: break-word; overflow-x: auto; white-space: pre-wrap; margin-bottom: 0;">
+        Este ejercicio lo realicé utilizando angular y TypeScript, 
+        pero tú lo puedes hacer con tu framework y lenguaje favorito.
+  
+        La parte del HTML la puedes hacer a tu gusto o lo puedes 
+        mandar a imprimir en consola, terminal etc. 
+        Si asi se te hace más fácil y rápido.
+
+        Recuerda que siempre hay muchas soluciones. puedes resolverlo como tu puedas
+      </pre>
+    </div>
+  </div>
+  
+  <div style="background-color: #9044e7; padding: 20px;">
+    <div style="background-color: #333; color: #e3eb0c; padding: 10px;">
+      <pre  style="word-wrap: break-word; overflow-x: auto; white-space: pre-wrap; margin-bottom: 0;">
+        Ejercicio 5:
+        Dado un array de personas con nombres y apellidos
+        crear una función para ordenar el array por los apellidos
+        en orden alfabético
+         
+        Ejemplo:
+        ordenarPorApellidos([
+        "Juan Perez", 
+        "Laura Guzman", 
+        "Carlos Rivera", 
+        "Natalia Hernandez", 
+        "Jose Martinez"
+        ]);  
+      </pre>
+    </div>
+  </div>
+  
+  
+  
+ <!-- ejercicio -->
+ <div class="container">
+    <h2>Nombre de las personas</h2>
+    <ul>
+      <li>Juan Perez</li>
+      <li>Laura Guzman</li>
+      <li>Carlos Rivera</li>
+      <li>Jose Martinez</li>
+      <li>Natalia Hernandez</li>
+    </ul>
+  
+    <h2>Nombres ordenados alfabéticamente por apellidos</h2>
+    <ul>
+      <li *ngFor="let nombreOrdenado of nombresOrdenados">{{nombreOrdenado}}</li>
+    </ul>
+  </div>
+ <!-- fin del ejercicio -->
+    
+    <div style="background-color: #9044e7; padding: 20px;">
+      <div style="background-color: #333; color: #7bc4f4; padding: 10px;">
+        <pre  style="word-wrap: break-word; overflow-x: auto; white-space: pre-wrap; margin-bottom: 0;">
+          A Continuación la solución explicada 
+          "La puedes usar como pista, antes de ver el código" 
+          y posteriormente el código.
+        </pre>
+      </div>
+    </div>
+    <div style="background-color: #9044e7; padding: 20px;">
+      <div style="background-color: #333; color: #57f596; padding: 10px;">
+        <pre  style="word-wrap: break-word; overflow-x: auto; white-space: pre-wrap; margin-bottom: 0;">
+            Crea una función llamada ordenarPorApellidos que reciba como parámetro un array de personas 
+            con nombres y apellidos.
+
+            Dentro de la función, declara una variable llamada nombresOrdenados y asígnale el resultado de
+            llamar al método sort() en el array de personas. 
+            
+            Pasaremos una función de comparación como argumento a sort().
+            En la función de comparación, utiliza la función split(" ") en las variables a y b 
+            para separar los nombres y apellidos por espacios. 
+            Esto creará arreglos donde el primer elemento será el 
+            nombre y el segundo elemento será el apellido.
+
+            Luego, utiliza localeCompare() en los apellidos (a.split(" ")[1] y b.split(" ")[1]) 
+            para realizar una comparación alfabética y determinar el orden de los apellidos.
+            Finalmente, retorna el array nombresOrdenados al final de la función.
+        </pre>
+      </div>
+    </div>
+  
+    
+    <div class="image-container">
+ 
+      <div>
+        <img src="./assets/ejercicios/prueba5/ejercicio5.png" alt="Imagen 2">
+      </div>
+      <div class="right-align">
+        <a href="javascript:history.back()"> <i class="bi bi-arrow-left-circle-fill"></i> Regresar</a>
+    </div>
+    
+    <div class="right-align">
+        <a routerLink="/inicio"> <i class="bi bi-house-door"></i> Ir a inicio</a>
+    </div>
+    </div>
+    
+
+
+
+
+
+  
