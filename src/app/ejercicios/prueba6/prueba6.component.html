@@ -1,1 +1,187 @@
-<app-modal></app-modal>
+
+<style>
+    .right-align {
+        text-align: right;
+    }
+    .right-align a {
+        color: white;
+        text-decoration: none;
+    }
+</style>
+
+<style>
+    .container {
+      width: 300px;
+      margin: 0 auto;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+  
+    h2 {
+        margin-top: 20px;
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #3366cc;
+      text-transform: uppercase;
+    }
+  
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+  
+    li {
+      margin-bottom: 10px;
+      color: #555555;
+      background-color: #f2f2f2;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+  </style>
+  
+
+
+
+<div style="background-color: #9044e7; padding: 20px;">
+    <div style="background-color: #333; color: #7bc4f4; padding: 10px; word-wrap: break-word !important;">
+        <div class="right-align">
+            <a href="javascript:history.back()"> <i class="bi bi-arrow-left-circle-fill"></i> Regresar</a>
+        </div>
+        <hr>
+        <div class="right-align">
+            <a routerLink="/inicio"> <i class="bi bi-house-door"></i> Ir a inicio</a>
+        </div>
+      <pre style="word-wrap: break-word; overflow-x: auto; white-space: pre-wrap; margin-bottom: 0;">
+        Este ejercicio lo realicé utilizando angular y TypeScript, 
+        pero tú lo puedes hacer con tu framework y lenguaje favorito.
+  
+        La parte del HTML la puedes hacer a tu gusto o lo puedes 
+        mandar a imprimir en consola, terminal etc. 
+        Si asi se te hace más fácil y rápido.
+
+        Recuerda que siempre hay muchas soluciones. puedes resolverlo como tu puedas
+      </pre>
+    </div>
+  </div>
+  
+  <div style="background-color: #9044e7; padding: 20px;">
+    <div style="background-color: #333; color: #e3eb0c; padding: 10px;">
+      <pre  style="word-wrap: break-word; overflow-x: auto; white-space: pre-wrap; margin-bottom: 0;">
+        Ejercicio 6:
+        Dado un año actual, crea un programa que me muestre 
+        los años bisiestos que habrá en los proximos 30 años
+         
+        Ejemplo:
+        bisiestos(2023);
+         
+        Salida:
+        2024
+        2028
+        2032
+        2036
+        2040
+        2044
+        2048
+        2052
+      </pre>
+    </div>
+  </div>
+  
+  
+  
+ <!-- ejercicio -->
+<div class="container">
+    <h2 class="title">Años bisiestos</h2>
+    <div class="content">
+      <p class="current-year">Año actual: {{ anosLimite }}</p>
+      <p class="subtitle">Años bisiestos en los próximos 30 años:</p>
+      <ul class="leap-years">
+        <li *ngFor="let ano of getProximosAnosBisiestos(anosLimite, 10)">{{ ano }}</li>
+      </ul>
+    </div>
+  </div>
+ <!-- fin del ejercicio -->
+    
+    <div style="background-color: #9044e7; padding: 20px;">
+      <div style="background-color: #333; color: #7bc4f4; padding: 10px;">
+        <pre  style="word-wrap: break-word; overflow-x: auto; white-space: pre-wrap; margin-bottom: 0;">
+          A Continuación la solución explicada 
+          "La puedes usar como pista, antes de ver el código" 
+          y posteriormente el código.
+        </pre>
+      </div>
+    </div>
+    <div style="background-color: #9044e7; padding: 20px;">
+      <div style="background-color: #333; color: #57f596; padding: 10px;">
+        <pre  style="word-wrap: break-word; overflow-x: auto; white-space: pre-wrap; margin-bottom: 0;">
+            La clase tiene una propiedad anosLimite que es de tipo number. 
+            Esta propiedad se utiliza para almacenar el año actual obtenido mediante 
+            new Date().getFullYear() en el constructor de la clase.
+
+            El constructor de la clase se ejecuta cuando se crea una instancia y se 
+            encarga de asignar el valor del año actual a la propiedad anosLimite.
+
+            La clase también tiene un método llamado getProximosAnosBisiestos que acepta dos parámetros: 
+            comenzarAno y contador. Este método devuelve un array de números (number[]) que representa los 
+            años bisiestos en los próximos contador años a partir del año comenzarAno.
+
+            Dentro de getProximosAnosBisiestos, se declara una variable local anosBisiestos que es 
+            inicializada como un array vacío para almacenar los años bisiestos.
+
+            Luego se declara una variable local ano que se inicializa con el valor de comenzarAno + 1. 
+            Esta variable se utiliza para iterar a través de los años desde el año siguiente al año de inicio.
+
+            A continuación, hay un bucle while que se ejecuta mientras la longitud de anosBisiestos sea 
+            menor que contador. Esto asegura que se encuentren los próximos contador años bisiestos.
+
+            Dentro del bucle, se verifica si el año actual (ano) es un año bisiesto llamando al
+            método esAnoBisiesto pasando el valor de ano. Si es bisiesto, 
+            se agrega al array anosBisiestos utilizando el método push.
+
+            Después de eso, se incrementa el valor de ano en 1 para pasar al 
+            siguiente año y continuar el bucle.
+
+            Finalmente, se devuelve el array anosBisiestos que contiene los años bisiestos encontrados.
+
+            La clase también tiene un método llamado esAnoBisiesto que acepta un parámetro ano de tipo number y 
+            devuelve un valor booleano (boolean). Este método verifica si un año es bisiesto utilizando una 
+            expresión condicional que evalúa si el año es divisible por 4 y no divisible por 100,
+
+            o si es divisible por 400. Si la condición se cumple, devuelve true, de lo contrario, devuelve false.
+
+            En resumen, este código define una clase Prueba6Component que calcula y almacena los 
+            años bisiestos en los próximos contador años a partir de un año de inicio dado.
+        </pre>
+      </div>
+    </div>
+  
+    
+    <div class="image-container">
+ 
+      <div>
+        <img src="./assets/ejercicios/prueba6/anos-bisisestos.png" alt="Imagen 2">
+      </div>
+      <div class="right-align">
+        <a href="javascript:history.back()"> <i class="bi bi-arrow-left-circle-fill"></i> Regresar</a>
+    </div>
+    
+    <div class="right-align">
+        <a routerLink="/inicio"> <i class="bi bi-house-door"></i> Ir a inicio</a>
+    </div>
+    </div>
+    
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  

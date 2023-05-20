@@ -29,6 +29,10 @@ const routes: Routes = [
   loadChildren: ()=> import('./asistente/asistente.module').then(m => m.AsistenteModule)
  },
  {
+  path: 'blog',
+  loadChildren: ()=> import('./home/home.module').then(m => m.HomeModule)
+ },
+ {
   path: '404',
   component: NopagefoundComponent,
  },

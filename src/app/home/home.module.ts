@@ -5,13 +5,15 @@ import { HomeRoutingModule } from './home-routing.module';
 import { InicioComponent } from './inicio/inicio.component';
 import { PoliticasDePrivacidadComponent } from './politicas-de-privacidad/politicas-de-privacidad.component';
 import { TerminosCondicionesComponent } from './terminos-condiciones/terminos-condiciones.component';
+import { BlogComponent } from './blog/blog.component';
 
 
 @NgModule({
   declarations: [
     InicioComponent,
     PoliticasDePrivacidadComponent,
-    TerminosCondicionesComponent
+    TerminosCondicionesComponent,
+    BlogComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { TerminosCondicionesComponent } from './terminos-condiciones/terminos-co
   exports: [
     InicioComponent,
     PoliticasDePrivacidadComponent,
-    TerminosCondicionesComponent
+    TerminosCondicionesComponent,
+    BlogComponent
   ]
 })
 export class HomeModule { }

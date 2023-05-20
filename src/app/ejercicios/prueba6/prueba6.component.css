@@ -1,0 +1,88 @@
+.container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .content {
+    margin-top: 20px;
+  }
+  
+  .current-year {
+    font-size: 18px;
+    color: #666;
+  }
+  
+  .subtitle {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+  }
+  
+  .leap-years {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  
+  .leap-years li {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  @media (max-width: 767px) {
+    .title {
+      font-size: 20px;
+    }
+  
+    .current-year {
+      font-size: 16px;
+    }
+  
+    .subtitle {
+      font-size: 16px;
+    }
+  
+    .leap-years li {
+      font-size: 14px;
+    }
+  }
+  
+  
+  .card-body {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .card-title {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  
+  .card-text {
+    margin-bottom: 10px;
+  }
+  
+  .image-container {
+    background-color: #9044e7;
+    padding: 20px;
+  }
+  
+  .image-container > div {
+    background-color: #333;
+    color: #7bc4f4;
+    padding: 10px;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    width: 100%;
+  }
+  
