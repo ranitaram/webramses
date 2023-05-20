@@ -11,6 +11,9 @@ import { ComponentsModule } from '../components/components.module';
 import { Prueba4Component } from './prueba4/prueba4.component';
 import { Prueba5Component } from './prueba5/prueba5.component';
 import { Prueba6Component } from './prueba6/prueba6.component';
+import { Prueba7Component } from './prueba7/prueba7.component';
+import { Prueba8Component } from './prueba8/prueba8.component';
+import { Prueba9Component } from './prueba9/prueba9.component';
 
 
 @NgModule({
@@ -22,6 +25,9 @@ import { Prueba6Component } from './prueba6/prueba6.component';
     Prueba4Component,
     Prueba5Component,
     Prueba6Component,
+    Prueba7Component,
+    Prueba8Component,
+    Prueba9Component,
   ],
   imports: [
     CommonModule,
@@ -36,7 +42,10 @@ import { Prueba6Component } from './prueba6/prueba6.component';
     Prueba3Component,
     Prueba4Component,
     Prueba5Component,
-    Prueba6Component
+    Prueba6Component,
+    Prueba7Component,
+    Prueba8Component,
+    Prueba9Component
   ]
 })
 export class EjerciciosModule { }
