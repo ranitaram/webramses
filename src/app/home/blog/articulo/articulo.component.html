@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Artículo</title>
+    <style>
+        /* Estilos personalizados */
+        body {
+            padding-top: 70px;
+        }
+
+        header {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 767px) {
+            body {
+                padding-top: 20px;
+            }
+
+            header {
+                margin-bottom: 20px;
+            }
+
+            h1 {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+    <!-- Agrega aquí tus enlaces a los archivos CSS de Bootstrap y tus estilos personalizados -->
+   
+</head>
+
+<body>
+    <header data-bs-theme="dark">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="assets/img/ram-logo.png" alt="Logo" height="50">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/proyectos">Proyectos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/ejercicios">Ejercicios para pruebas técnicas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" routerLink="/blog">Blog</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Buscar">
+                        <button class="btn btn-outline-success" type="submit">Buscar un artículo</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <!-- Aquí se muestra el artículo seleccionado -->
+                    <article>
+                        <h2>Título del artículo</h2>
+                        <img src="assets/img/git.jpg" alt="Imagen del artículo">
+                        <p>Contenido del artículo</p>
+                        <p>Fecha: 20 de mayo de 2023</p>
+                    </article>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <!-- Agrega aquí tu formulario de búsqueda de artículos -->
+                    <form action="/buscar" method="GET">
+                        <input type="text" name="busqueda" placeholder="Buscar artículos...">
+                        <button type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-8 offset-md-2">
+                    <!-- Resultados de la búsqueda -->
+                    <section>
+                        <h3 style="margin-top: 20px; margin-bottom: 10px;">Resultados de la búsqueda:</h3>
+                        <ul style="margin-bottom: 20px;">
+                            <li>Artículo relacionado 1</li>
+                            <li>Artículo relacionado 2</li>
+                            <li>Artículo relacionado 3</li>
+                            <!-- Agrega aquí más elementos de la lista para mostrar más resultados -->
+                        </ul>
+                    </section>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+</body>
+
+</html>
