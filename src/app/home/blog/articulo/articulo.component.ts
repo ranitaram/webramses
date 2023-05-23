@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./articulo.component.css']
 })
 export class ArticuloComponent {
+title: any;
+content: any;
 
 }

@@ -7,6 +7,7 @@ import { PoliticasDePrivacidadComponent } from './politicas-de-privacidad/politi
 import { TerminosCondicionesComponent } from './terminos-condiciones/terminos-condiciones.component';
 import { BlogComponent } from './blog/blog.component';
 import { ArticuloComponent } from './blog/articulo/articulo.component';
+import { CrearArticuloComponent } from './blog/crear-articulo/crear-articulo.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ArticuloComponent } from './blog/articulo/articulo.component';
     PoliticasDePrivacidadComponent,
     TerminosCondicionesComponent,
     BlogComponent,
-    ArticuloComponent
+    ArticuloComponent,
+    CrearArticuloComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +28,8 @@ import { ArticuloComponent } from './blog/articulo/articulo.component';
     PoliticasDePrivacidadComponent,
     TerminosCondicionesComponent,
     BlogComponent,
-    ArticuloComponent
+    ArticuloComponent,
+    CrearArticuloComponent
   ]
 })
 export class HomeModule { }

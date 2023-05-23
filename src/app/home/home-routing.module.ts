@@ -5,13 +5,15 @@ import { PoliticasDePrivacidadComponent } from './politicas-de-privacidad/politi
 import { TerminosCondicionesComponent } from './terminos-condiciones/terminos-condiciones.component';
 import { BlogComponent } from './blog/blog.component';
 import { ArticuloComponent } from './blog/articulo/articulo.component';
+import { CrearArticuloComponent } from './blog/crear-articulo/crear-articulo.component';
 
 const routes: Routes = [
   {path: 'inicio', component: InicioComponent,},
   {path: 'politicas', component: PoliticasDePrivacidadComponent},
   {path: 'terminos', component: TerminosCondicionesComponent},
   {path: 'blog',component: BlogComponent},
-  {path: 'blog/articulo', component: ArticuloComponent}
+  {path: 'blog/articulo', component: ArticuloComponent},
+  {path: 'blog/crear', component: CrearArticuloComponent},
 ];
 
 @NgModule({
