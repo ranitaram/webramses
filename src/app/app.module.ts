@@ -11,12 +11,14 @@ import { FormsModule } from '@angular/forms';
 import { ComponentsModule } from './components/components.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AsistenteModule } from './asistente/asistente.module';
+import { AuthModule } from './auth/auth.module';
 @NgModule({
   declarations: [
     AppComponent,
     NopagefoundComponent
   ],
   imports: [
+    AuthModule,
     AppRoutingModule,
     AsistenteModule,
     BrowserModule,
