@@ -1,0 +1,33 @@
+.login-register {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+    padding: 20% 0;
+  }
+  
+  .login-box {
+    width: 100%;
+    margin: 2 auto;
+  }
+  
+  .login-box .footer {
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+  
+  .login-box .social {
+    display: block;
+    margin-bottom: 30px;
+  }
+  
+  #recoverform {
+    display: none;
+  }
+  
+  .imagen-pequena {
+    width: 50%;
+    height: auto;
+  }
+  
