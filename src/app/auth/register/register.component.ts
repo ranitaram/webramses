@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -17,6 +17,8 @@ export class RegisterComponent {
     password: ['', Validators.required],
     password2: ['', Validators.required],
     terminos: [false, Validators.required],
+  },{
+    validators: this.passwordsIguales('password', 'password2')
   });
 
   constructor(private fb: FormBuilder){}
@@ -44,6 +46,35 @@ export class RegisterComponent {
   aceptarTerminos(){
     return !this.registerForm.get('terminos')?.value && this.formSubmitted;
 
+  }
+
+  passwordsNoValidos(){
+    const pass1 = this.registerForm.get('password')?.value;
+    const pass2 = this.registerForm.get('password2')?.value;
+
+    if ((pass1 !== pass2) && this.formSubmitted) {
+      return true;
+    }else {
+      return false;
+    }
+
+  }
+
+  //este es una funcion que regresa un objeto si da errores
+  // si no da errores regresara un null
+  passwordsIguales(pass1Name: string, pass2Name: string){
+    //necesitamos retornar una funcion
+    return(formGroup: FormGroup)=> {
+      const pass1Control = formGroup.get(pass1Name);
+      const pass2Control = formGroup.get(pass2Name);
+
+      if (pass1Control?.value === pass2Control?.value) {
+        pass2Control?.setErrors(null)
+      } else {
+        pass2Control?.setErrors({noEsIgual: true})
+      }
+
+    }
   }
 
 }
