@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Router} from '@angular/router';
+import { NgZone } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import Swal from 'sweetalert2'
@@ -24,7 +26,10 @@ export class RegisterComponent {
   });
 
   constructor(private fb: FormBuilder,
-              private usuarioService: UsuarioService){}
+              private usuarioService: UsuarioService,
+              private router: Router,
+              private ngZone: NgZone
+              ){}
 
   //metodo para capturar la informacion
   crearUsuario(){
@@ -39,8 +44,12 @@ export class RegisterComponent {
     .subscribe(
       {
         next: resp => {
-          console.log('usuario creado');
+       
           console.log(resp);
+          this.ngZone.run(()=>{
+            this.router.navigate(['/inicio']);
+  
+          });
         },
         error: err => {
           Swal.fire('Error', err.error.msg, 'error')
