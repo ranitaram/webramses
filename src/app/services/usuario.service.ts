@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { RegisterForm } from '../interfaces/register-form.interface';
 import { GLOBAL } from './GLOBAL';
 import { LoginForm } from '../interfaces/login-form.interface';
+import { tap } from 'rxjs/operators';
 
 const base_url = GLOBAL.url;
 
@@ -14,10 +15,20 @@ export class UsuarioService {
   constructor(private http: HttpClient) { }
 
   crearUsuario(formData: RegisterForm){
-    return this.http.post(`${base_url}usuarios/crear`, formData);
+    return this.http.post(`${base_url}usuarios/crear`, formData)
+    .pipe(
+      tap((resp: any) => {
+        localStorage.setItem('token', resp.token)
+      })
+    )
   }
 
   login(formData: LoginForm){
-    return this.http.post(`${base_url}login`,formData);
+    return this.http.post(`${base_url}login`,formData)
+    .pipe(
+      tap((resp: any) => {
+        localStorage.setItem('token', resp.token)
+      })
+    )
   }
 }
