@@ -6,15 +6,26 @@ import { CrearArticuloForm } from '../interfaces/crear-articulo-form.interface';
 import { tap } from 'rxjs/operators';
 
 const base_url = GLOBAL.url;
+
 @Injectable({
   providedIn: 'root'
 })
 export class BlogService {
+
+
  
   constructor(private http: HttpClient) { }
 
+  get token(): string{
+    return localStorage.getItem('token') || '';
+  }
+
  crearArticulo(formData: CrearArticuloForm){
-  return this.http.post(`${base_url}articulos/crear`, formData)
+  return this.http.post(`${base_url}articulos/crear`, formData, {
+    headers: {
+      'x-token': this.token
+    }
+  })
   .pipe(
     tap((resp: any)=>{
       console.log(resp);

@@ -3,12 +3,33 @@
 <div class="container">
     <h1>Crear Artículo</h1>
   
-    <form (ngSubmit)="saveArticle()" class="article-form">
+    <form (ngSubmit)="crearArticulo()" 
+          class="article-form"
+          autocomplete="off"
+          [formGroup]="crearArticuloForm" >
       <div class="form-group">
-        <label for="title">Título</label>
-        <input type="text" id="title" name="title" required class="form-control">
+        <label for="title">Título:</label>
+        <input type="text" 
+               id="title" 
+               name="title"
+               placeholder="titulo" 
+               required 
+               class="form-control"
+               formControlName="titulo"
+               >
       </div>
   
+      <div class="form-group">
+        <label for="title">Categoria:</label>
+        <input type="text" 
+               id="title" 
+               name="title"
+               placeholder="categoria" 
+               required 
+               class="form-control"
+               formControlName="categoria"
+               >
+      </div>
       <!-- <div class="form-group">
         <label for="image">Imagen</label>
         <input type="file" id="image" name="image" class="form-control">
@@ -16,7 +37,11 @@
 
       <div class="form-group" style="background-color: wheat;">
         <label for="content">Contenido</label>
-        <editor  name="content" required rows="8" class="form-control" [init]="{
+        <editor  name="content" 
+                 required rows="8" 
+                 class="form-control" 
+                 formControlName="contenido"
+                 [init]="{
           base_url: '/tinymce', 
           suffix: '.min'       
         }"></editor>
@@ -29,7 +54,13 @@
   
       <div class="form-group">
         <label for="date">Fecha</label>
-        <input type="date" id="date" name="date" required class="form-control">
+        <input type="date" 
+               id="date" 
+               name="date" 
+               required 
+               class="form-control"
+               formControlName="fecha"
+               >
       </div>
   
       <div class="form-group buttons">

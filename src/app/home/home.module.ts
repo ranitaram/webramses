@@ -9,6 +9,8 @@ import { BlogComponent } from './blog/blog.component';
 import { ArticuloComponent } from './blog/articulo/articulo.component';
 import { CrearArticuloComponent } from './blog/crear-articulo/crear-articulo.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { EditorModule } from '@tinymce/tinymce-angular';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    EditorModule
+    EditorModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     InicioComponent,
