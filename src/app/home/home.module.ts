@@ -8,7 +8,7 @@ import { TerminosCondicionesComponent } from './terminos-condiciones/terminos-co
 import { BlogComponent } from './blog/blog.component';
 import { ArticuloComponent } from './blog/articulo/articulo.component';
 import { CrearArticuloComponent } from './blog/crear-articulo/crear-articulo.component';
-
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { CrearArticuloComponent } from './blog/crear-articulo/crear-articulo.com
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    EditorModule
   ],
   exports: [
     InicioComponent,
@@ -29,7 +30,8 @@ import { CrearArticuloComponent } from './blog/crear-articulo/crear-articulo.com
     TerminosCondicionesComponent,
     BlogComponent,
     ArticuloComponent,
-    CrearArticuloComponent
+    CrearArticuloComponent,
+    
   ]
 })
 export class HomeModule { }

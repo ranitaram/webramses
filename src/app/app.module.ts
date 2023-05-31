@@ -12,6 +12,7 @@ import { ComponentsModule } from './components/components.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AsistenteModule } from './asistente/asistente.module';
 import { AuthModule } from './auth/auth.module';
+import { EditorModule, TINYMCE_SCRIPT_SRC  } from '@tinymce/tinymce-angular';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,8 +29,11 @@ import { AuthModule } from './auth/auth.module';
     HttpClientModule,
     FormsModule,
     ProyectosModule,
+    EditorModule
   ],
-  providers: [],
+  providers: [
+    { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
