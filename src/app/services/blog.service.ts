@@ -4,6 +4,7 @@ import {GLOBAL} from "./GLOBAL";
 import {HttpClient} from "@angular/common/http";
 import { CrearArticuloForm } from '../interfaces/crear-articulo-form.interface';
 import { tap } from 'rxjs/operators';
+import { ListarArticulos } from '../interfaces/listar-articulos.interface';
 
 const base_url = GLOBAL.url;
 
@@ -31,5 +32,10 @@ export class BlogService {
       console.log(resp);
     })
   )
+ }
+
+
+ listarArticulos(): Observable<ListarArticulos[]>{
+  return this.http.get<ListarArticulos[]>(`${base_url}articulos/ultimos`)
  }
 }
