@@ -3,8 +3,8 @@
 export interface ListarArticulos {
     _id: String,
     titulo: String,
-    contenido: String,
+    contenido: string,
     categoria: String,
-    fecha: String,
+    fecha: string,
     imagen: String
 }

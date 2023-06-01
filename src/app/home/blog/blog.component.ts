@@ -10,18 +10,21 @@ import { tap } from 'rxjs/operators';
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit {
+
   
   articulos: ListarArticulos[] = [];
-  imageUrl: string = "/assets/img/mongo-logo.png"; // Ruta de la imagen
-  imageUrl2: string = "/assets/img/git.jpg"; // Ruta de la imagen
+  baseImageUrl = 'http://127.0.0.1:4201/api/articulos/imagen/';
+  defaultImageUrl: string = "/assets/img/default.png"; // Ruta de la imagen
+ 
 
   constructor(private blogService: BlogService){}
   
   ngOnInit(): void {
     this.blogService.listarArticulos().pipe(
-      tap((articulos: ListarArticulos[]) => {
-        this.articulos = articulos;
-        console.log(articulos);
+      tap((response: any) => {
+        this.articulos = response.articulos;
+       // this.imageUrl = response.artculo.imagen ? `/assets/img/${response.articulo.imagen}`: "/assets/img/default.png";
+        console.log(this.articulos);
       })
     ).subscribe({
       next: (data) => {
@@ -35,10 +38,11 @@ export class BlogComponent implements OnInit {
   }
 
   // Dentro de la clase del componente
-obtenerDia(fecha: string): string {
-  const date = new Date(fecha);
-  return date.getDate().toString();
-}
+  obtenerDia(fecha: string): string {
+    const date = new Date(fecha);
+    return date.getUTCDate().toLocaleString('en-US', { minimumIntegerDigits: 2 });
+  }
+  
 
 obtenerMes(fecha: string): string {
   const date = new Date(fecha);
@@ -50,6 +54,13 @@ obtenerAnio(fecha: string): string {
   const date = new Date(fecha);
   return date.getFullYear().toString();
 }
+
+stripHtmlTags(content: string): string {
+  const div = document.createElement('div');
+  div.innerHTML = content;
+  return div.textContent || div.innerText || '';
+}
+
 
   
 }

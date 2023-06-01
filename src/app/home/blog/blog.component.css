@@ -115,7 +115,9 @@ h1 {
 }
 
 .example-1 .wrapper {
-  background: url("/assets/img/ram-logo.png") center center/cover no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .example-1 .date {

@@ -171,26 +171,10 @@
           <div class="col-lg-6 col-md-8 mx-auto">
             <h1 class="fw-light text-white" style="font-size: 46px; margin-bottom: 20px;">Blog</h1>
             <p class="lead text-body-secondary text-white" style="font-size: 20px; margin-bottom: 10px;">
-                En este blog, encontrarán valiosos consejos y técnicas para mejorar su lógica al abordar ejercicios de pruebas técnicas. Exploraremos diferentes enfoques y estrategias que te ayudarán a resolver problemas de manera más eficiente y efectiva. 
+              ¡Bienvenido a nuestro blog de tecnología! Aquí encontrarás una amplia variedad de artículos fascinantes que exploran el apasionante mundo de la tecnología.  
                
             </p>
-            <p class="lead text-body-secondary text-white" style="font-size: 20px; margin-bottom: 10px;">
-               
-                Desde cómo descomponer un problema en pasos más pequeños hasta cómo optimizar algoritmos, descubrirás cómo perfeccionar tus habilidades y superar desafíos técnicos con confianza.
-            </p>
-            <!-- <p class="lead text-body-secondary text-white" style="font-size: 18px; margin-bottom: 10px;">
-               
-                Además de mejorar tu lógica en ejercicios de pruebas técnicas, también te mantendremos actualizado con lo último en frameworks y tecnologías. Encontrarás información relevante y noticias sobre los avances más recientes en el mundo del desarrollo de software
-            </p>
-            <p class="lead text-body-secondary text-white" style="font-size: 18px; margin-bottom: 10px;">
-                con un enfoque especial en el framework "Qwik" y sus características innovadoras. Estar al tanto de las últimas tendencias te permitirá ampliar tus conocimientos y estar preparado para los desafíos que el mundo tecnológico presenta.
-
-            </p> -->
            
-            <p>
-              <!-- <a href="#" class="btn btn-primary my-2">Main call to action</a> -->
-              <!-- <a href="#" class="btn btn-secondary my-2">Secondary action</a> -->
-            </p>
           </div>
         </div>
       </section>
@@ -202,19 +186,23 @@
 
 
 
-<div class="row">
-    <div class="example-1 card">
-      <div class="wrapper" [style.background]="'url(' + imageUrl + ') center center/cover no-repeat'">
+
+
+
+  <div class="row">
+    <div class="example-1 card" *ngFor="let item of articulos">
+      <div class="wrapper background-image"  [ngStyle]="{'background-image': item.imagen === 'default.png' ? 'url(/assets/img/default.png' : 'url(' + baseImageUrl + item.imagen + ')'}" >
         <div class="date">
-          <span class="day">12</span>
-          <span class="month">Aug</span>
-          <span class="year">2016</span>
+          <span class="day">{{ obtenerDia(item.fecha) }}</span>
+          <span class="month">{{ obtenerMes(item.fecha) }}</span>
+          <span class="year">{{ obtenerAnio(item.fecha) }}</span>
         </div>
         <div class="data">
           <div class="content">
-            <span class="author">Ramses Indalecio</span>
-            <h1 class="title"><a href="#">Boxing icon has the will for a couple more fights</a></h1>
-            <p class="text">The highly anticipated world championship fight will take place at 10am and is the second major boxing blockbuster in the nation after 43 years.</p>
+            <span class="author"><strong>Autor: </strong> Ramses Indalecio</span>
+            <h1 class="title"><a href="#">{{item.titulo}}</a></h1>
+            <h5> <strong>Categoria:</strong>  {{item.categoria}}</h5>
+            <p class="text">{{ stripHtmlTags(item.contenido) }}</p>
             <!-- <label for="show-menu" class="menu-button"><span></span></label> -->
           </div>
           <input type="checkbox" id="show-menu" />
@@ -228,84 +216,7 @@
         </div>
       </div>
     </div>
-    <div class="example-1 card">
-      <div class="wrapper" [style.background]="'url(' + imageUrl2 + ') center center/cover no-repeat'">
-        <div class="date">
-          <span class="day">12</span>
-          <span class="month">Aug</span>
-          <span class="year">2016</span>
-        </div>
-        <div class="data">
-          <div class="content">
-            <span class="author">Ramses Indalecio</span>
-            <h1 class="title"><a href="#">Boxing icon has the will for a couple more fights</a></h1>
-            <p class="text">The highly anticipated world championship fight will take place at 10am and is the second major boxing blockbuster in the nation after 43 years.</p>
-            <!-- <label for="show-menu" class="menu-button"><span></span></label> -->
-          </div>
-          <input type="checkbox" id="show-menu" />
-          <!-- <ul class="menu-content">
-            <li>
-              <a href="#" class="fa fa-bookmark-o"></a>
-            </li>
-            <li><a href="#" class="fa fa-heart-o"><span>Ir al artículo</span></a></li>
-            <li><a href="#" class="fa fa-comment-o"><span>1</span></a></li>
-          </ul> -->
-        </div>
-      </div>
-    </div>
-   
-  </div>
-<div class="row">
-    <div class="example-1 card" >
-      <div class="wrapper">
-        <div class="date">
-          <span class="day">12</span>
-          <span class="month">Aug</span>
-          <span class="year">2016</span>
-        </div>
-        <div class="data">
-          <div class="content">
-            <span class="author">Ramses Indalecio</span>
-            <h1 class="title"><a href="#">Boxing icon has the will for a couple more fights</a></h1>
-            <p class="text">The highly anticipated world championship fight will take place at 10am and is the second major boxing blockbuster in the nation after 43 years.</p>
-            <!-- <label for="show-menu" class="menu-button"><span></span></label> -->
-          </div>
-          <input type="checkbox" id="show-menu" />
-          <!-- <ul class="menu-content">
-            <li>
-              <a href="#" class="fa fa-bookmark-o"></a>
-            </li>
-            <li><a href="#" class="fa fa-heart-o"><span>Ir al artículo</span></a></li>
-            <li><a href="#" class="fa fa-comment-o"><span>1</span></a></li>
-          </ul> -->
-        </div>
-      </div>
-    </div>
-    <div class="example-1 card">
-      <div class="wrapper">
-        <div class="date">
-          <span class="day">12</span>
-          <span class="month">Aug</span>
-          <span class="year">2016</span>
-        </div>
-        <div class="data">
-          <div class="content">
-            <span class="author">Ramses Indalecio</span>
-            <h1 class="title"><a href="#">Boxing icon has the will for a couple more fights</a></h1>
-            <p class="text">The highly anticipated world championship fight will take place at 10am and is the second major boxing blockbuster in the nation after 43 years.</p>
-            <!-- <label for="show-menu" class="menu-button"><span></span></label> -->
-          </div>
-          <input type="checkbox" id="show-menu" />
-          <!-- <ul class="menu-content">
-            <li>
-              <a href="#" class="fa fa-bookmark-o"></a>
-            </li>
-            <li><a href="#" class="fa fa-heart-o"><span>Ir al artículo</span></a></li>
-            <li><a href="#" class="fa fa-comment-o"><span>1</span></a></li>
-          </ul> -->
-        </div>
-      </div>
-    </div>
+    
    
   </div>
 
