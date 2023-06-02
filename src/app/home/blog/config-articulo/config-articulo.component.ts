@@ -52,6 +52,27 @@ export class ConfigArticuloComponent implements OnInit{
     });
   }
   
-  
+  // Agrega este método a tu componente
+eliminarArticuloConfirmado(articuloId: string): void {
+  // Aquí realizas la eliminación del artículo
+  this.blogService.borrarArticulo(articuloId).subscribe({
+    next: (data) => {
+      // Lógica adicional en caso de éxito si es necesario
+      console.log('Artículo eliminado:', data);
+      // Realizar alguna acción después de eliminar el artículo, si es necesario
+      Swal.fire('Artículo se ha eliminado!', 'Da click en el botón!', 'success');
+      // Recargar la página
+      setTimeout(() => {
+        location.reload();
+      }, 3000);
+    },
+    error: (error) => {
+      console.log('Error al eliminar el artículo:', error);
+      // Manejo de error
+      Swal.fire('Error, Error al eliminar el artículo', error.error.msg, 'error');
+    }
+  });
+}
+
 
 }
