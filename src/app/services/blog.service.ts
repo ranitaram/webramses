@@ -47,6 +47,10 @@ export class BlogService {
   return this.http.get<ListarArticulos[]>(`${base_url}articulos`,{params})
  }
 
+ listFullarticle(): Observable<ListarArticulos[]>{
+  return this.http.get<ListarArticulos[]>(`${base_url}articulos`)
+ }
+
  obtenerUnArticulo(_id: string): Observable<ListarArticulos>{
   return this.http.get<ListarArticulos>(`${base_url}articulos/uno/${_id}`)
  }

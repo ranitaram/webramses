@@ -1,1 +1,15 @@
-<p>config-articulo works!</p>
+<div class="container">
+    <h1>Listado de Artículos</h1>
+  
+    <ul>
+      <li *ngFor="let item of articulos" >
+        <div class="articulo-titulo">{{item.titulo}}</div>
+        <div class="botones">
+          <button class="boton-subir-imagen" >Subir Imagen</button>
+          <button class="boton-editar-articulo" >Editar Artículo</button>
+          <button class="boton-eliminar-articulo" >Eliminar Artículo</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+  
