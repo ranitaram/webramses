@@ -174,7 +174,7 @@
               ¡Bienvenido a nuestro blog de tecnología! Aquí encontrarás una amplia variedad de artículos fascinantes que exploran el apasionante mundo de la tecnología.  
                
             </p>
-           
+            <h1 class="fw-light text-white" style="font-size: 56px; margin-bottom: 0px; margin-top: 80px;">Artículos recientes</h1>
           </div>
         </div>
       </section>
@@ -200,7 +200,7 @@
         <div class="data">
           <div class="content">
             <span class="author"><strong>Autor: </strong> Ramses Indalecio</span>
-            <h1 class="title"><a href="#">{{item.titulo}}</a></h1>
+            <h1 class="title"><a [routerLink]="['/blog/articulo/', item._id]">{{item.titulo}}</a></h1>
             <h5> <strong>Categoria:</strong>  {{item.categoria}}</h5>
             <p class="text">{{ stripHtmlTags(item.contenido) }}</p>
             <!-- <label for="show-menu" class="menu-button"><span></span></label> -->

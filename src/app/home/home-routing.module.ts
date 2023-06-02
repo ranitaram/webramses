@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'politicas', component: PoliticasDePrivacidadComponent},
   {path: 'terminos', component: TerminosCondicionesComponent},
   {path: 'blog',component: BlogComponent},
-  {path: 'blog/articulo', component: ArticuloComponent},
+  {path: 'blog/articulo/:id', component: ArticuloComponent},
   {path: 'blog/crear', component: CrearArticuloComponent},
 ];
 

@@ -3,7 +3,8 @@ body {
 }
 
 header {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
+  margin-top: 70px; /* Ajusta este valor según tus necesidades */
 }
 
 h2 {
@@ -14,14 +15,17 @@ h2 {
 }
 
 img {
-    max-width: 100%;
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 20px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  object-fit: contain; /* Ajusta la propiedad object-fit según tus necesidades (por ejemplo, "contain", "cover", "fill", etc.) */
 }
+
 
 p {
     color: #777;
+    margin-top: 20px; 
     margin-bottom: 10px;
 }
 
@@ -40,3 +44,56 @@ button {
     border: none;
     cursor: pointer;
 }
+main {
+  margin-top: 110px; /* Ajusta este valor según tus necesidades */
+  margin-bottom: 20px;
+}
+
+
+.article-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .article-item {
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .article-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .article-title {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .btn {
+    background-color: #6be6ff;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #37e81f;
+  }
+
+
+
+  
+  
+  
