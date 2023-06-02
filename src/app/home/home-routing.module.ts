@@ -7,6 +7,7 @@ import { BlogComponent } from './blog/blog.component';
 import { ArticuloComponent } from './blog/articulo/articulo.component';
 import { CrearArticuloComponent } from './blog/crear-articulo/crear-articulo.component';
 import { ConfigArticuloComponent } from './blog/config-articulo/config-articulo.component';
+import { EditarArticuloComponent } from './blog/editar-articulo/editar-articulo.component';
 
 const routes: Routes = [
   {path: 'inicio', component: InicioComponent,},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'blog/articulo/:id', component: ArticuloComponent},
   {path: 'blog/crear', component: CrearArticuloComponent},
   {path: 'blog/config', component: ConfigArticuloComponent},
+  {path: 'blog/editar', component: EditarArticuloComponent},
 ];
 
 @NgModule({

@@ -12,6 +12,7 @@ import { EditorModule } from '@tinymce/tinymce-angular';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ConfigArticuloComponent } from './blog/config-articulo/config-articulo.component';
+import { EditarArticuloComponent } from './blog/editar-articulo/editar-articulo.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ConfigArticuloComponent } from './blog/config-articulo/config-articulo.
     BlogComponent,
     ArticuloComponent,
     CrearArticuloComponent,
-    ConfigArticuloComponent
+    ConfigArticuloComponent,
+    EditarArticuloComponent
   ],
   imports: [
     CommonModule,
@@ -38,6 +40,7 @@ import { ConfigArticuloComponent } from './blog/config-articulo/config-articulo.
     InicioComponent,
     PoliticasDePrivacidadComponent,
     TerminosCondicionesComponent,
+    EditarArticuloComponent,
     
   ]
 })
