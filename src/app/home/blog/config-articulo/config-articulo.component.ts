@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { tap } from 'rxjs';
 import { ListarArticulos } from 'src/app/interfaces/listar-articulos.interface';
 import { BlogService } from 'src/app/services/blog.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -32,5 +33,25 @@ export class ConfigArticuloComponent implements OnInit{
       }
     });
   }
+
+  eliminarArticulo(articuloId: string): void {
+    this.blogService.borrarArticulo(articuloId).subscribe({
+      next: (data) => {
+        // Lógica adicional en caso de éxito si es necesario
+        console.log('Artículo eliminado:', data);
+        // Realizar alguna acción después de eliminar el artículo, si es necesario
+        Swal.fire('Artículo se ha eliminado!', 'Da click en el boton!', 'success').then(() => {
+          location.reload(); // Recargar la página
+        });
+      },
+      error: (error) => {
+        console.log('Error al eliminar el artículo:', error);
+        // Manejo de error
+        Swal.fire('Error, Error al eliminar el artículo', error.error.msg, 'error');
+      }
+    });
+  }
+  
+  
 
 }

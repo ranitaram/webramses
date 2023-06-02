@@ -34,11 +34,12 @@ export class BlogService {
   )
  }
 
-
+//me trae los ultimos 10 articulos
  listarArticulos(): Observable<ListarArticulos[]>{
   return this.http.get<ListarArticulos[]>(`${base_url}articulos/ultimos`)
  }
 
+ //me trae todos los articulos, para paginar
  listarTodosLosArticulos(limit?: number):  Observable<ListarArticulos[]>{
   let params = new HttpParams();
   if (limit) {
@@ -47,11 +48,23 @@ export class BlogService {
   return this.http.get<ListarArticulos[]>(`${base_url}articulos`,{params})
  }
 
+ //me devuelte todos los articulos 
  listFullarticle(): Observable<ListarArticulos[]>{
   return this.http.get<ListarArticulos[]>(`${base_url}articulos`)
  }
 
+ //me devuelve el articulo seleccionado
  obtenerUnArticulo(_id: string): Observable<ListarArticulos>{
   return this.http.get<ListarArticulos>(`${base_url}articulos/uno/${_id}`)
  }
+
+ //borrar un articulo seleccionado
+ borrarArticulo(_id: string): Observable<ListarArticulos>{
+  return this.http.delete<ListarArticulos>(`${base_url}articulos/borrar/${_id}`, {
+    headers: {
+      'x-token': this.token
+    }
+  })
+ }
+
 }

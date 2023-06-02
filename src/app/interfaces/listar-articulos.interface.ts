@@ -1,7 +1,7 @@
 
 
 export interface ListarArticulos {
-    _id: String,
+    _id: string,
     titulo: String,
     contenido: string,
     categoria: String,
