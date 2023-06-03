@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ConfigArticuloComponent } from './blog/config-articulo/config-articulo.component';
 import { EditarArticuloComponent } from './blog/editar-articulo/editar-articulo.component';
+import { SubirImagenComponent } from './blog/subir-imagen/subir-imagen.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { EditarArticuloComponent } from './blog/editar-articulo/editar-articulo.
     ArticuloComponent,
     CrearArticuloComponent,
     ConfigArticuloComponent,
-    EditarArticuloComponent
+    EditarArticuloComponent,
+    SubirImagenComponent
   ],
   imports: [
     CommonModule,
@@ -41,6 +43,7 @@ import { EditarArticuloComponent } from './blog/editar-articulo/editar-articulo.
     PoliticasDePrivacidadComponent,
     TerminosCondicionesComponent,
     EditarArticuloComponent,
+    SubirImagenComponent
     
   ]
 })

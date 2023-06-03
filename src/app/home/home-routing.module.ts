@@ -8,6 +8,7 @@ import { ArticuloComponent } from './blog/articulo/articulo.component';
 import { CrearArticuloComponent } from './blog/crear-articulo/crear-articulo.component';
 import { ConfigArticuloComponent } from './blog/config-articulo/config-articulo.component';
 import { EditarArticuloComponent } from './blog/editar-articulo/editar-articulo.component';
+import { SubirImagenComponent } from './blog/subir-imagen/subir-imagen.component';
 
 const routes: Routes = [
   {path: 'inicio', component: InicioComponent,},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'blog/crear', component: CrearArticuloComponent},
   {path: 'blog/config', component: ConfigArticuloComponent},
   {path: 'blog/editar/:id', component: EditarArticuloComponent},
+  {path: 'blog/subirImagen/:id', component: SubirImagenComponent},
 ];
 
 @NgModule({
