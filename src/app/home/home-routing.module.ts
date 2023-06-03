@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'blog/articulo/:id', component: ArticuloComponent},
   {path: 'blog/crear', component: CrearArticuloComponent},
   {path: 'blog/config', component: ConfigArticuloComponent},
-  {path: 'blog/editar', component: EditarArticuloComponent},
+  {path: 'blog/editar/:id', component: EditarArticuloComponent},
 ];
 
 @NgModule({

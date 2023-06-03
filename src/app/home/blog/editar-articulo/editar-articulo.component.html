@@ -1,1 +1,68 @@
-<p>editar-articulo works!</p>
+<!-- article-form.component.html -->
+
+<div class="container">
+    <h1>Editar Artículo</h1>
+  
+    <form (ngSubmit)="editarArticulo()" 
+          class="article-form"
+          autocomplete="off"
+          [formGroup]="editarArticuloForm" >
+    
+          <div class="form-group">
+        <label for="title">Título:</label>
+        <input type="text" 
+               id="title" 
+               name="title"
+               placeholder="titulo" 
+               required 
+               class="form-control"
+               formControlName="titulo"
+               >
+      </div>
+        
+
+      <div class="form-group">
+        <label for="title">Categoria:</label>
+        <input type="text" 
+               id="title" 
+               name="title"
+               placeholder="categoria" 
+               required 
+               class="form-control"
+               formControlName="categoria"
+               >
+      </div>
+  
+
+      <div class="form-group" style="background-color: wheat;">
+        <label for="content">Contenido</label>
+        <editor  name="content" 
+                 required rows="8" 
+                 class="form-control" 
+                 formControlName="contenido"
+                 [init]="{
+          base_url: '/tinymce', 
+          suffix: '.min'       
+        }"></editor>
+      </div>
+
+     
+  
+      <div class="form-group">
+        <label for="date">Fecha</label>
+        <input type="date" 
+               id="date" 
+               name="date" 
+               required 
+               class="form-control"
+               formControlName="fecha"
+               >
+      </div>
+  
+      <div class="form-group buttons">
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+     
+      </div>
+    </form>
+  </div>
+  

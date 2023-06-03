@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
 import {GLOBAL} from "./GLOBAL";
-import {HttpClient, HttpParams} from "@angular/common/http";
+import {HttpClient, HttpParams, HttpHeaders} from "@angular/common/http";
 import { CrearArticuloForm } from '../interfaces/crear-articulo-form.interface';
 import { tap } from 'rxjs/operators';
 import { ListarArticulos } from '../interfaces/listar-articulos.interface';
+import { EditarArticuloForm } from '../interfaces/editar-articulo-form.interface';
 
 const base_url = GLOBAL.url;
 
@@ -66,5 +67,15 @@ export class BlogService {
     }
   })
  }
+
+ actualizarArticulo(articuloId: string, nuevoContenido: CrearArticuloForm): Observable<any> {
+  
+  return this.http.put<any>(`${base_url}articulos/actualizar/${articuloId}`, nuevoContenido, {
+    headers: {
+      'x-token': this.token
+    }
+  });
+  
+} 
 
 }
