@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '../guards/auth.guard';
 import { InicioComponent } from './inicio/inicio.component';
 import { PoliticasDePrivacidadComponent } from './politicas-de-privacidad/politicas-de-privacidad.component';
 import { TerminosCondicionesComponent } from './terminos-condiciones/terminos-condiciones.component';
@@ -16,10 +17,10 @@ const routes: Routes = [
   {path: 'terminos', component: TerminosCondicionesComponent},
   {path: 'blog',component: BlogComponent},
   {path: 'blog/articulo/:id', component: ArticuloComponent},
-  {path: 'blog/crear', component: CrearArticuloComponent},
-  {path: 'blog/config', component: ConfigArticuloComponent},
-  {path: 'blog/editar/:id', component: EditarArticuloComponent},
-  {path: 'blog/subir/:id', component: SubirImagenComponent},
+  {path: 'blog/crear', component: CrearArticuloComponent, canActivateChild: [AuthGuard]},
+  {path: 'blog/config', component: ConfigArticuloComponent, canActivateChild: [AuthGuard] },
+  {path: 'blog/editar/:id', component: EditarArticuloComponent, canActivateChild: [AuthGuard]},
+  {path: 'blog/subir/:id', component: SubirImagenComponent, canActivateChild: [AuthGuard]},
 ];
 
 @NgModule({

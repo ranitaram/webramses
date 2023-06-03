@@ -37,10 +37,15 @@ export class UsuarioService {
     .pipe(
       tap((resp: any) => {
         //console.log(resp);
-        localStorage.setItem('token', resp.token)
+        localStorage.setItem('token', resp.token);
+         // Guardar el correo electrónico en el localStorage o en otra variable
+        localStorage.setItem('email', resp.email); // Suponiendo que la respuesta contiene el correo electrónico del usuario
       })
-    )
+    );
   }
 
+  getCurrentUserEmail() {
+    return localStorage.getItem('email'); // Obtener el correo electrónico almacenado en el localStorage
+  }
 
 }
