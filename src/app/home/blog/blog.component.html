@@ -174,8 +174,8 @@
               ¡Bienvenido a nuestro blog de tecnología! Aquí encontrarás una amplia variedad de artículos fascinantes que exploran el apasionante mundo de la tecnología.  
                
             </p>
-            <h1 class="fw-light text-white" style="font-size: 56px; margin-bottom: 0px; margin-top: 80px;">Artículos recientes</h1>
-            <h3 class="fw-light text-white" style="font-size: 56px; margin-bottom: 0px; margin-top: 80px;">Últimos 10</h3>
+            <h1 class="fw-light text-white" style="font-size: 56px; margin-bottom: 0px; margin-top: 40px;">Artículos recientes</h1>
+            <h3 class="fw-light text-white" style="font-size: 56px; margin-bottom: 0px; margin-top: 40px;">Últimos 10</h3>
           </div>
         </div>
       </section>
@@ -187,12 +187,11 @@
 
 
 
-
-
-
-  <div class="row">
-    <div class="example-1 card" *ngFor="let item of articulos">
-      <div class="wrapper background-image"  [ngStyle]="{'background-image': item.imagen === 'default.png' ? 'url(/assets/img/default.png' : 'url(' + baseImageUrl + item.imagen + ')'}" >
+<div class="row">
+  <div class="example-1 card" *ngFor="let item of articulos">
+    <a [routerLink]="['/blog/articulo/', item._id]">
+      <div class="wrapper background-image"  
+          [ngStyle]="{'background-image': item.imagen === 'default.png' ? 'url(/assets/img/default.png)' : 'url(' + baseImageUrl + item.imagen + ')'}" >
         <div class="date">
           <span class="day">{{ obtenerDia(item.fecha) }}</span>
           <span class="month">{{ obtenerMes(item.fecha) }}</span>
@@ -201,25 +200,20 @@
         <div class="data">
           <div class="content">
             <span class="author"><strong>Autor: </strong> Ramses Indalecio</span>
-            <h1 class="title"><a [routerLink]="['/blog/articulo/', item._id]">{{item.titulo}}</a></h1>
+            <h1 class="title">{{item.titulo}}</h1>
             <h5> <strong>Categoria:</strong>  {{item.categoria}}</h5>
             <p class="text">{{ stripHtmlTags(item.contenido) }}</p>
-            <!-- <label for="show-menu" class="menu-button"><span></span></label> -->
           </div>
           <input type="checkbox" id="show-menu" />
-          <!-- <ul class="menu-content">
-            <li>
-              <a href="#" class="fa fa-bookmark-o"></a>
-            </li>
-            <li><a href="#" class="fa fa-heart-o"><span>Ir al artículo</span></a></li>
-            <li><a href="#" class="fa fa-comment-o"><span>1</span></a></li>
-          </ul> -->
         </div>
       </div>
-    </div>
-    
-   
+    </a>
   </div>
+</div>
+
+
+
+ 
 
 
 

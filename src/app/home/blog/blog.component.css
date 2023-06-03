@@ -17,6 +17,11 @@ a {
   text-decoration: none;
 }
 
+.card a {
+  color: gray; /* Cambia el color del enlace según tus necesidades */
+}
+
+
 h1 {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
