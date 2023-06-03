@@ -78,4 +78,15 @@ export class BlogService {
   
 } 
 
+subirImagen(articuloId: string, archivo: File): Observable<any>{
+  const formData = new FormData();
+  formData.append('file0', archivo);
+
+  return this.http.post<any>(`${base_url}articulos/subir-imagen/${articuloId}`, formData, {
+    headers: {
+      'x-token': this.token
+    }
+  })
+}
+
 }

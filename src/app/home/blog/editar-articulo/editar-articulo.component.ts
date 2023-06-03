@@ -90,31 +90,7 @@ export class EditarArticuloComponent  implements OnInit{
     });
   }
 
-  // editarArticulo(){
-  //   const articuloActualizado: ListarArticulos = {
-  //     _id: this.articulo._id,
-  //     titulo: this.editarArticuloForm.value.titulo,
-  //     contenido: this.editarArticuloForm.value.contenido,
-  //     categoria: this.editarArticuloForm.value.categoria,
-  //     fecha: this.editarArticuloForm.value.fecha,
-  //     imagen: this.articulo.imagen
-  //   };
-  //   this.blogService.actualizarArticulo(articuloActualizado).subscribe(
-  //     (data) => {
-  //       // La actualización se realizó correctamente
-  //       console.log('Artículo actualizado:', data);
-  //       // Puedes mostrar una notificación de éxito usando una librería como SweetAlert2
-  //       Swal.fire('Éxito', 'El artículo se ha actualizado correctamente', 'success');
-  //       // Redirige al listado de artículos o a la página de detalles del artículo actualizado
-  //       this.router.navigate(['/blog']);
-  //     },
-  //     (error) => {
-  //       console.log('Error al actualizar el artículo:', error);
-  //       // Puedes mostrar una notificación de error
-  //       Swal.fire('Error', 'Hubo un error al actualizar el artículo', 'error');
-  //     }
-  //   );
-  // }
+  
 
   editarArticulo() {
     const articuloActualizado: CrearArticuloForm = {

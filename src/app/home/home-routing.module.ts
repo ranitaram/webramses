@@ -19,7 +19,7 @@ const routes: Routes = [
   {path: 'blog/crear', component: CrearArticuloComponent},
   {path: 'blog/config', component: ConfigArticuloComponent},
   {path: 'blog/editar/:id', component: EditarArticuloComponent},
-  {path: 'blog/subir', component: SubirImagenComponent},
+  {path: 'blog/subir/:id', component: SubirImagenComponent},
 ];
 
 @NgModule({

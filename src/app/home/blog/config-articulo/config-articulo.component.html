@@ -6,10 +6,10 @@
         <div class="articulo-titulo">{{item.titulo}}</div>
         <div class="botones">
           <a [routerLink]="'/blog/crear'" class="boton-crear-articulo">Crear Artículo</a>
-          <button class="boton-subir-imagen">Subir Imagen</button>
-
-          <a [routerLink]="'/blog/editar/' + item._id"  class="boton-editar-articulo">Editar Artículo</a>
          
+
+          <a [routerLink]="'/blog/subir/' + item._id" class="boton-subir-imagen">Subir Imagen</a>
+          <a [routerLink]="'/blog/editar/' + item._id"  class="boton-editar-articulo">Editar Artículo</a>
           <button class="boton-eliminar-articulo"  data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">Eliminar Artículo</button>
         </div>
 
