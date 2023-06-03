@@ -1,1 +1,20 @@
-<p>subir-imagen works!</p>
+<div class="upload-container">
+    <h1>Subir Imagen</h1>
+    <div class="preview-container">
+      <div class="preview" *ngIf="imagenSeleccionada">
+        <img [src]="imagenSeleccionada" alt="Vista previa de la imagen" />
+      </div>
+      <div class="default-preview" *ngIf="!imagenSeleccionada">
+        <img src="assets/img/fondo-ram.png" alt="Imagen por defecto" />
+        <p>No se ha seleccionado ninguna imagen</p>
+      </div>
+    </div>
+    <form (submit)="subirImagen()">
+      <label class="custom-file-upload">
+        <input type="file" accept="image/*" (change)="seleccionarImagen($event)" />
+        Seleccionar Imagen
+      </label>
+      <button class="submit-button" type="submit">Subir</button>
+    </form>
+  </div>
+  
