@@ -17,10 +17,10 @@ const routes: Routes = [
   {path: 'terminos', component: TerminosCondicionesComponent},
   {path: 'blog',component: BlogComponent},
   {path: 'blog/articulo/:id', component: ArticuloComponent},
-  {path: 'blog/crear', component: CrearArticuloComponent, canActivateChild: [AuthGuard]},
-  {path: 'blog/config', component: ConfigArticuloComponent, canActivateChild: [AuthGuard] },
-  {path: 'blog/editar/:id', component: EditarArticuloComponent, canActivateChild: [AuthGuard]},
-  {path: 'blog/subir/:id', component: SubirImagenComponent, canActivateChild: [AuthGuard]},
+  {path: 'blog/crear', component: CrearArticuloComponent, canActivate: [AuthGuard]},
+  {path: 'blog/config', component: ConfigArticuloComponent, canActivate: [AuthGuard] },
+  {path: 'blog/editar/:id', component: EditarArticuloComponent, canActivate: [AuthGuard]},
+  {path: 'blog/subir/:id', component: SubirImagenComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({

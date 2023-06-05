@@ -1,24 +1,26 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivateChild, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivateChild, RouterStateSnapshot, UrlTree, Router, CanActivate } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UsuarioService } from '../services/usuario.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivateChild {
+export class AuthGuard implements CanActivate {
   constructor(private usuarioService: UsuarioService, private router: Router) {}
 
-  canActivateChild(
+  canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      
+    state: RouterStateSnapshot) {
+      // console.log('paso por el guard');
+      // return false;
     const userEmail = this.usuarioService.getCurrentUserEmail();
     
     const allowedEmail = 'veraramses1234@gmail.com';
-
+      
     
     if (userEmail === allowedEmail) {
+      console.log('paso por el canActivate');
       return true;
     } else {
       this.router.navigate(['/inicio']);
