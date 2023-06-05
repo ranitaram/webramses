@@ -1,40 +1,15 @@
 <div class="container">
-    <h1>Listado de Artículos</h1>
-  
-    <ul>
-      <li *ngFor="let item of articulos">
-        <div class="articulo-titulo">{{item.titulo}}</div>
-        <div class="botones">
-          <a [routerLink]="'/blog/crear'" class="boton-crear-articulo">Crear Artículo</a>
-         
+  <h1>Listado de Artículos</h1>
 
-          <a [routerLink]="'/blog/subir/' + item._id" class="boton-subir-imagen">Subir Imagen</a>
-          <a [routerLink]="'/blog/editar/' + item._id"  class="boton-editar-articulo">Editar Artículo</a>
-          <button class="boton-eliminar-articulo"  data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">Eliminar Artículo</button>
-        </div>
-
-
-        <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar Eliminación</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  ¿Estás seguro de que deseas eliminar este artículo?
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                  <button type="button" class="btn btn-danger" (click)="eliminarArticuloConfirmado(item._id)" data-bs-dismiss="modal">Eliminar</button>
-                </div>
-              </div>
-            </div>
-          </div>
-      </li>
-    </ul>
-  </div>
-  
-  <!-- Agrega este elemento al final del cuerpo de tu componente -->
-
-  
+  <ul>
+    <li *ngFor="let item of articulos">
+      <div class="articulo-titulo">{{item.titulo}}</div>
+      <div class="botones">
+        <a [routerLink]="'/blog/crear'" class="boton-crear-articulo">Crear Artículo</a>
+        <a [routerLink]="'/blog/subir/' + item._id" class="boton-subir-imagen">Subir Imagen</a>
+        <a [routerLink]="'/blog/editar/' + item._id"  class="boton-editar-articulo">Editar Artículo</a>
+        <button class="boton-eliminar-articulo" (click)="eliminarArticuloConfirmado(item._id)">Eliminar Artículo</button>
+      </div>
+    </li>
+  </ul>
+</div>
