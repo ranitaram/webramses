@@ -3,6 +3,9 @@ import { error } from 'jquery';
 import { ListarArticulos } from 'src/app/interfaces/listar-articulos.interface';
 import { BlogService } from 'src/app/services/blog.service';
 import { tap } from 'rxjs/operators';
+import { GLOBAL } from 'src/app/services/GLOBAL';
+
+const baseUrl = GLOBAL.url;
 
 @Component({
   selector: 'app-blog',
@@ -13,7 +16,7 @@ export class BlogComponent implements OnInit {
 
   
   articulos: ListarArticulos[] = [];
-  baseImageUrl = 'http://127.0.0.1:4201/api/articulos/imagen/';
+  baseImageUrl = `${baseUrl}articulos/imagen/`;
   defaultImageUrl: string = "/assets/img/default.png"; // Ruta de la imagen
  
 

@@ -4,7 +4,9 @@ import { tap } from 'rxjs';
 import { ListarArticulos } from 'src/app/interfaces/listar-articulos.interface';
 import { BlogService } from 'src/app/services/blog.service';
 import { ElementRef, Renderer2 } from '@angular/core';
+import { GLOBAL } from 'src/app/services/GLOBAL';
 
+const base_url = GLOBAL.url
 @Component({
   selector: 'app-articulo',
   templateUrl: './articulo.component.html',
@@ -13,7 +15,8 @@ import { ElementRef, Renderer2 } from '@angular/core';
 export class ArticuloComponent implements OnInit, AfterViewInit {
   idArticulo: string = '';
   articulo: ListarArticulos | null = null;
-  baseImageUrl = 'http://127.0.0.1:4201/api/articulos/imagen/';
+  //baseImageUrl = 'http://127.0.0.1:4201/api/articulos/imagen/';
+  baseImageUrl = `${base_url}articulos/imagen/`;
   defaultImageUrl: string = "/assets/img/default.png";
   articulos: ListarArticulos[] = [];
   almacenarArticulos: ListarArticulos[] = [];
