@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ConfigArticuloComponent } from './blog/config-articulo/config-articulo.component';
 import { EditarArticuloComponent } from './blog/editar-articulo/editar-articulo.component';
 import { SubirImagenComponent } from './blog/subir-imagen/subir-imagen.component';
+import { LandingpageComponent } from './landingpage/landingpage.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SubirImagenComponent } from './blog/subir-imagen/subir-imagen.component
     CrearArticuloComponent,
     ConfigArticuloComponent,
     EditarArticuloComponent,
-    SubirImagenComponent
+    SubirImagenComponent,
+    LandingpageComponent
   ],
   imports: [
     CommonModule,
@@ -43,7 +45,8 @@ import { SubirImagenComponent } from './blog/subir-imagen/subir-imagen.component
     PoliticasDePrivacidadComponent,
     TerminosCondicionesComponent,
     EditarArticuloComponent,
-    SubirImagenComponent
+    SubirImagenComponent,
+    LandingpageComponent
     
   ]
 })

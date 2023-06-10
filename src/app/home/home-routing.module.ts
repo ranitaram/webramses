@@ -10,6 +10,7 @@ import { CrearArticuloComponent } from './blog/crear-articulo/crear-articulo.com
 import { ConfigArticuloComponent } from './blog/config-articulo/config-articulo.component';
 import { EditarArticuloComponent } from './blog/editar-articulo/editar-articulo.component';
 import { SubirImagenComponent } from './blog/subir-imagen/subir-imagen.component';
+import { LandingpageComponent } from './landingpage/landingpage.component';
 
 const routes: Routes = [
   {path: 'inicio', component: InicioComponent,},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'blog/config', component: ConfigArticuloComponent, canActivate: [AuthGuard] },
   {path: 'blog/editar/:id', component: EditarArticuloComponent, canActivate: [AuthGuard]},
   {path: 'blog/subir/:id', component: SubirImagenComponent, canActivate: [AuthGuard]},
+  {path: 'landingpage', component: LandingpageComponent}
 ];
 
 @NgModule({
