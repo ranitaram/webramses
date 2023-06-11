@@ -15,6 +15,8 @@ import { ConfigArticuloComponent } from './blog/config-articulo/config-articulo.
 import { EditarArticuloComponent } from './blog/editar-articulo/editar-articulo.component';
 import { SubirImagenComponent } from './blog/subir-imagen/subir-imagen.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
+import { ComponentsModule } from '../components/components.module';
+import { BotonflotanteComponent } from '../components/botonflotante/botonflotante.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
     ConfigArticuloComponent,
     EditarArticuloComponent,
     SubirImagenComponent,
-    LandingpageComponent
+    LandingpageComponent,
+    BotonflotanteComponent
   ],
   imports: [
     CommonModule,
@@ -35,6 +38,7 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
     EditorModule,
     FormsModule,
     ReactiveFormsModule,
+    ComponentsModule,
   ],
   exports: [
     ArticuloComponent,
