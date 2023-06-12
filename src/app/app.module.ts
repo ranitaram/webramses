@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AsistenteModule } from './asistente/asistente.module';
 import { AuthModule } from './auth/auth.module';
 import { EditorModule, TINYMCE_SCRIPT_SRC  } from '@tinymce/tinymce-angular';
+import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { EditorModule, TINYMCE_SCRIPT_SRC  } from '@tinymce/tinymce-angular';
     HttpClientModule,
     FormsModule,
     ProyectosModule,
-    EditorModule
+    EditorModule,
+    SharedModule
   ],
   providers: [
     { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' },

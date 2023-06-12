@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ModalComponent } from './modal/modal.component';
 import { PreciosComponent } from './precios/precios.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -11,7 +12,8 @@ import { PreciosComponent } from './precios/precios.component';
     PreciosComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   exports: [
     ModalComponent,

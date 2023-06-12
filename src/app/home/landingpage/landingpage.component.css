@@ -1,0 +1,7 @@
+app-precios {
+    scroll-margin-top: 70px; /* Ajusta el valor según sea necesario para que el encabezado no cubra la sección */
+  }
+  #precios-section {
+    padding-top: 70px; /* Ajusta el valor según sea necesario para que el encabezado no cubra la sección */
+  }
+  
