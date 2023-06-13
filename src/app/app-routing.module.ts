@@ -37,6 +37,10 @@ const routes: Routes = [
   loadChildren: ()=> import('./auth/auth.module').then(m => m.AuthModule)
  },
  {
+  path: 'payments',
+  loadChildren: ()=> import('./payments/paymets.module').then(m => m.PaymetsModule)
+ },
+ {
   path: '404',
   component: NopagefoundComponent,
  },

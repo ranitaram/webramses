@@ -14,10 +14,13 @@ import { AsistenteModule } from './asistente/asistente.module';
 import { AuthModule } from './auth/auth.module';
 import { EditorModule, TINYMCE_SCRIPT_SRC  } from '@tinymce/tinymce-angular';
 import { SharedModule } from './shared/shared.module';
+import { PaymetsModule } from './payments/paymets.module';
+
 @NgModule({
   declarations: [
     AppComponent,
-    NopagefoundComponent
+    NopagefoundComponent,
+   
   ],
   imports: [
     AuthModule,
@@ -31,7 +34,8 @@ import { SharedModule } from './shared/shared.module';
     FormsModule,
     ProyectosModule,
     EditorModule,
-    SharedModule
+    SharedModule,
+    PaymetsModule
   ],
   providers: [
     { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' },
