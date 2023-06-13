@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { data } from 'jquery';
+import { of } from 'rxjs';
 import { PaymentService } from 'src/app/services/payment.service';
 
 @Component({
@@ -6,8 +8,28 @@ import { PaymentService } from 'src/app/services/payment.service';
   templateUrl: './precios.component.html',
   styleUrls: ['./precios.component.css']
 })
-export class PreciosComponent {
+export class PreciosComponent implements OnInit{
 
   constructor(private paymentService: PaymentService){}
+  
+  
+  ngOnInit(): void {
+   
+  }
+
+  generarOrdenPago(){
+    this.paymentService.generarPagoLandingPage(data)
+    .subscribe({
+      next: resp => {
+        console.log(resp);
+        //redireccionar a la url
+        window.location.href = resp.url;
+      },
+      error: err => {
+        console.log(err);
+        return of(null);
+      }
+    })
+  }
 
 }

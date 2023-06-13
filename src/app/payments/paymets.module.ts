@@ -4,16 +4,18 @@ import { CommonModule } from '@angular/common';
 import { PaymetsRoutingModule } from './paymets-routing.module';
 import { SuccessComponent } from './success/success.component';
 import { CancelComponent } from './cancel/cancel.component';
+import { ComponentsModule } from '../components/components.module';
 
 
 @NgModule({
   declarations: [
     SuccessComponent,
-    CancelComponent
+    CancelComponent,
   ],
   imports: [
     CommonModule,
-    PaymetsRoutingModule
+    PaymetsRoutingModule,
+    ComponentsModule
   ],
   exports: [
     SuccessComponent,

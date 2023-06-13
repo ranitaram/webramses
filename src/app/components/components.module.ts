@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { ModalComponent } from './modal/modal.component';
 import { PreciosComponent } from './precios/precios.component';
 import { SharedModule } from '../shared/shared.module';
+import { BotonflotanteComponent } from './botonflotante/botonflotante.component';
 
 
 
 @NgModule({
   declarations: [
     ModalComponent,
-    PreciosComponent
+    PreciosComponent,
+   
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { SharedModule } from '../shared/shared.module';
   ],
   exports: [
     ModalComponent,
-    PreciosComponent
+    PreciosComponent,
+    
   ]
 })
 export class ComponentsModule { }

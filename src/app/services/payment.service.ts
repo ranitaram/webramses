@@ -16,7 +16,7 @@ export class PaymentService {
   constructor(private http: HttpClient) { }
 
   generarPagoLandingPage(data: any){
-    return this.http.post<any>(`${base_url}create-checkout-session`,data)
+    return this.http.post<any>(`${base_url}payment/create-checkout-session`,data)
     .pipe(
       tap((resp: any)=>{
         console.log(resp);
