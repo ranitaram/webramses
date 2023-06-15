@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {Observable, tap} from "rxjs";
+import {tap} from "rxjs";
 import {GLOBAL} from "./GLOBAL";
-import {HttpClient, HttpParams, HttpHeaders} from "@angular/common/http";
-import { data } from 'jquery';
+import {HttpClient} from "@angular/common/http";
+
 
 const base_url = GLOBAL.url;
 
