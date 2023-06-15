@@ -9,6 +9,9 @@ import { PaymentService } from 'src/app/services/payment.service';
   styleUrls: ['./precios.component.css']
 })
 export class PreciosComponent implements OnInit{
+onClick() {
+
+}
 
   constructor(private paymentService: PaymentService){}
   
