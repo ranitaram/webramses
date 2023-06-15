@@ -165,7 +165,7 @@
               <li>Respaldos</li>
               <li>Entrega de 2 a 3 días</li>
             </ul>
-            <button type="button" class="w-100 btn btn-lg btn-primary">Completar compra</button>
+            <button type="button" (click)="generarOrdenPagoBasico()" class="w-100 btn btn-lg btn-primary">Completar compra</button>
           </div>
         </div>
       </div>
@@ -183,7 +183,7 @@
               <li>Cambiar CSS de forma dinámica</li>
               <li>Entrega de 4 a 6 días</li>
             </ul>
-            <button type="button" class="w-100 btn btn-lg btn-primary">Completar compra</button>
+            <button type="button" (click)="generarOrdenPagoEstandar()" class="w-100 btn btn-lg btn-primary">Completar compra</button>
           </div>
         </div>
       </div>
@@ -201,7 +201,7 @@
               <li>2 horas/mes incluidas</li>
               <li>Entrega de 6 a 10 días</li>
             </ul>
-            <button type="button" class="w-100 btn btn-lg btn-primary">Completar compra</button>
+            <button type="button" (click)="generarOrdenPagoPremium()" class="w-100 btn btn-lg btn-primary">Completar compra</button>
           </div>
         </div>
       </div>

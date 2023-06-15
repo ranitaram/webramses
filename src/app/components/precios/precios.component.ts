@@ -32,4 +32,44 @@ export class PreciosComponent implements OnInit{
     })
   }
 
+  generarOrdenPagoBasico(){
+    this.paymentService.generarPagoBasico(data)
+    .subscribe({
+      next: resp => {
+        console.log(resp);
+        window.location.href = resp.url;
+      },
+      error: err => {
+        console.log(err);
+        return of(null);
+      }
+    })
+  }
+  generarOrdenPagoEstandar(){
+    this.paymentService.generarPagoEstandar(data)
+    .subscribe({
+      next: resp => {
+        console.log(resp);
+        window.location.href = resp.url;
+      },
+      error: err => {
+        console.log(err);
+        return of(null);
+      }
+    })
+  }
+  generarOrdenPagoPremium(){
+    this.paymentService.generarPagoPremium(data)
+    .subscribe({
+      next: resp => {
+        console.log(resp);
+        window.location.href = resp.url;
+      },
+      error: err => {
+        console.log(err);
+        return of(null);
+      }
+    })
+  }
+
 }
