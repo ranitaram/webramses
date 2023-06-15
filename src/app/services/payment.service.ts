@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {tap} from "rxjs";
 import {GLOBAL} from "./GLOBAL";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpParams, HttpHeaders} from "@angular/common/http";
 
 
 const base_url = GLOBAL.url;
