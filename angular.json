@@ -24,6 +24,7 @@
               { "glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/" },
               "src/favicon.ico",
               "src/assets",
+              "src/assets/ads.txt",
               {
                 "glob": "_redirects",
                 "input": "src",
