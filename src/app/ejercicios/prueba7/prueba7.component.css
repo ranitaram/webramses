@@ -1,0 +1,88 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .content {
+    text-align: center;
+  }
+  
+  .text-input {
+    width: 90%;
+    max-width: 600px;
+    height: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    outline: none;
+    resize: none;
+  }
+  
+  .count-button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  p {
+    font-size: 16px;
+  }
+  
+  /* Media query para dispositivos con pantalla de hasta 600px de ancho */
+  @media screen and (max-width: 600px) {
+    .text-input {
+      height: 150px;
+    }
+  }
+  
+  /* Media query para dispositivos con pantalla de al menos 601px de ancho */
+  @media screen and (min-width: 601px) {
+    .text-input {
+      height: 250px;
+      width: 600px;
+    }
+  }
+
+  /* plantilla */
+  .card-body {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .card-title {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  
+  .card-text {
+    margin-bottom: 10px;
+  }
+  
+  .image-container {
+    background-color: #9044e7;
+    padding: 20px;
+  }
+  
+  .image-container > div {
+    background-color: #333;
+    color: #7bc4f4;
+    padding: 10px;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    width: 100%;
+  }
+  

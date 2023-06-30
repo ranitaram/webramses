@@ -1,1 +1,115 @@
-<app-modal></app-modal>
+
+
+<style>
+    .right-align {
+        text-align: right;
+    }
+    .right-align a {
+        color: white;
+        text-decoration: none;
+    }
+</style>
+
+
+
+<div style="background-color: #9044e7; padding: 20px;">
+    <div style="background-color: #333; color: #7bc4f4; padding: 10px; word-wrap: break-word !important;">
+        <div class="right-align">
+            <a href="javascript:history.back()"> <i class="bi bi-arrow-left-circle-fill"></i> Regresar</a>
+        </div>
+        <hr>
+        <div class="right-align">
+            <a routerLink="/inicio"> <i class="bi bi-house-door"></i> Ir a inicio</a>
+        </div>
+      <pre style="word-wrap: break-word; overflow-x: auto; white-space: pre-wrap; margin-bottom: 0;">
+        Este ejercicio lo realicé utilizando angular y TypeScript, 
+        pero tú lo puedes hacer con tu framework y lenguaje favorito.
+  
+        La parte del HTML la puedes hacer a tu gusto o lo puedes 
+        mandar a imprimir en consola, terminal etc. 
+        Si asi se te hace más fácil y rápido.
+
+      </pre>
+    </div>
+  </div>
+  
+  <div style="background-color: #9044e7; padding: 20px;">
+    <div style="background-color: #333; color: #e3eb0c; padding: 10px;">
+      <pre  style="word-wrap: break-word; overflow-x: auto; white-space: pre-wrap; margin-bottom: 0;">
+        Ejercicio 7:
+       
+        Crea un programa que cuente las palabras de un texto,
+        el usuario debe de poder ingresar el texto en un campo y 
+        el programa debe de contar cuantas palabras existen en ese texto.
+      </pre>
+    </div>
+  </div>
+  
+  
+  
+  <!-- ejercicio aqui -->
+  <div class="container">
+    <div class="content">
+      <textarea [(ngModel)]="texto" placeholder="Ingresa tu texto aquí" class="text-input"></textarea>
+      <br>
+      <button (click)="contarPalabras()" class="count-button">Contar palabras</button>
+      <p *ngIf="contador !== null">Palabras contadas: {{ contador }}</p>
+    </div>
+  </div>
+  <!-- fin del ejercicio -->
+    
+    <div style="background-color: #9044e7; padding: 20px;">
+      <div style="background-color: #333; color: #7bc4f4; padding: 10px;">
+        <pre  style="word-wrap: break-word; overflow-x: auto; white-space: pre-wrap; margin-bottom: 0;">
+          A Continuación la solución explicada 
+          "La puedes usar como pista, antes de ver el código" 
+          y posteriormente el código.
+        </pre>
+      </div>
+    </div>
+    <div style="background-color: #9044e7; padding: 20px;">
+      <div style="background-color: #333; color: #57f596; padding: 10px;">
+        <pre  style="word-wrap: break-word; overflow-x: auto; white-space: pre-wrap; margin-bottom: 0;">
+            se definen dos variables en la clase AppComponent. 
+            texto es una variable de tipo string que almacenará el texto ingresado por el usuario,
+            y contador es una variable de tipo number que almacenará la cantidad de palabras
+            en el texto.
+
+            contarPalabras() es una función que se ejecuta cuando se hace clic en el botón "Contar palabras". 
+            En esta función, se verifica si el texto ingresado por el usuario, 
+            después de eliminar los espacios en blanco al inicio y al final con trim(), está vacío. 
+            Si el texto está vacío, se establece contador en 0, indicando que no hay palabras. 
+
+            En caso contrario, se divide el texto en palabras utilizando el método split(' '), 
+            que divide el texto en cada espacio en blanco y devuelve un array de palabras. 
+            Luego, se asigna la longitud de ese array a contador, 
+            indicando la cantidad de palabras en el texto.
+
+            La lógic    a de este código es simple: si no hay texto, el contador es 0; de lo contrario, 
+            se cuentan las palabras en el texto y se actualiza el contador.
+        </pre>
+      </div>
+    </div>
+  
+
+    
+    <div class="image-container">
+ 
+      <div>
+        <img src="./assets/ejercicios/prueba7/prueba7.png" alt="Imagen 2">
+      </div>
+      <div class="right-align">
+        <a href="javascript:history.back()"> <i class="bi bi-arrow-left-circle-fill"></i> Regresar</a>
+    </div>
+    <hr>
+    <div class="right-align">
+        <a routerLink="/inicio"> <i class="bi bi-house-door"></i> Ir a inicio</a>
+    </div>
+    </div>
+    
+
+
+
+
+  
+  
