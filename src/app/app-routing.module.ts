@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NopagefoundComponent } from './nopagefound/nopagefound.component';
-import { InicioComponent } from './home/inicio/inicio.component';
+
 import { HomeRoutingModule } from './home/home-routing.module';
 import { ProyectosRoutingModule } from './proyectos/proyectos-routing.module';
 import { EjerciciosRoutingModule } from './ejercicios/ejercicios-routing.module';
@@ -57,7 +57,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'}),
     HomeRoutingModule,
     ProyectosRoutingModule,
     EjerciciosRoutingModule,
