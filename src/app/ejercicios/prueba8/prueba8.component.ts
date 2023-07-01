@@ -9,21 +9,22 @@ export class Prueba8Component {
   textoUsuario: string = '';
   textoSimulado: string = '';
 
+ 
+
   simularEscritura() {
-    const velocidadEscritura = 50; 
+    const velocidadEscritura = 20; 
     const texto = this.textoUsuario;
     let index = 0;
 
     this.textoSimulado = '';
+   
 
     const escribirTexto = () => {
-      const letra = texto.charAt(index);
-      this.textoSimulado += letra;
+      this.textoSimulado += texto.charAt(index);
       index++;
 
       const textareaSimulado = document.getElementById('textoSimulado');
       if (textareaSimulado) {
-        textareaSimulado.innerText += letra;
         textareaSimulado.scrollTop = textareaSimulado.scrollHeight;
       }
 

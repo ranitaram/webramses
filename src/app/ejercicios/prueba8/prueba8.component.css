@@ -18,7 +18,7 @@
   
   textarea.form-control.simulado {
     background-color: #333;
-    color: #fff;
+    color: #4de2cc;
     overflow-y: auto;
   }
   
@@ -26,12 +26,9 @@
     margin-top: 10px;
   }
 
-  #textoSimulado {
-    position: relative;
-  }
   
-  .resaltado {
-    color: orange;
-  }
+  
+  
+  
   
   
