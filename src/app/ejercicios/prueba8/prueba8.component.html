@@ -1,1 +1,20 @@
-<app-modal></app-modal>
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <textarea [(ngModel)]="textoUsuario" placeholder="Pega tu texto aquí" class="form-control"></textarea>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <textarea [(ngModel)]="textoSimulado" class="form-control simulado" readonly></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button (click)="simularEscritura()" class="btn btn-primary">Simular escritura</button>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .row {
+    margin-bottom: 10px;
+  }
+  
+  textarea.form-control {
+    width: 610px;
+    height: 750px;
+    font-size: 16px;
+  }
+  
+  textarea.form-control.simulado {
+    background-color: #333;
+    color: #fff;
+    overflow-y: auto;
+  }
+  
+  button.btn-primary {
+    margin-top: 10px;
+  }
+
+  #textoSimulado {
+    position: relative;
+  }
+  
+  .resaltado {
+    color: orange;
+  }
+  
+  
